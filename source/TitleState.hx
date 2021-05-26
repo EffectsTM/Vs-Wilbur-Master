@@ -171,7 +171,7 @@ class TitleState extends MusicBeatState
 
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('WIBLURSTARTSCREEN');
-		gfDance.animation.addByPrefix('idle', "GF Dancing Beat instance", 24);
+		gfDance.animation.addByPrefix('idle', "GF Dancing Beat", 24);
 		gfDance.antialiasing = true;
 		gfDance.animation.play('idle');
 		add(gfDance);
