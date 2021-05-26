@@ -350,7 +350,7 @@ class StoryMenuState extends MusicBeatState
 			bullShit++;
 		}
 
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		// FlxG.sound.play(Paths.sound('scrollMenu'));
 
 		updateText();
 	}
