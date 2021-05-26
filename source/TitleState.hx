@@ -24,12 +24,12 @@ import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
 
+using StringTools;
 #if cpp
 import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 
-using StringTools;
 
 class TitleState extends MusicBeatState
 {
@@ -171,7 +171,7 @@ class TitleState extends MusicBeatState
 
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('WIBLURSTARTSCREEN');
-		gfDance.animation.addByPrefix('idle', "GF Dancing Beat", 24);
+		gfDance.animation.addByPrefix('idle', "GF Dancing Beat", 24, false);
 		gfDance.antialiasing = true;
 		gfDance.animation.play('idle');
 		add(gfDance);
@@ -377,10 +377,7 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		danceLeft = !danceLeft;
 
-		if (danceLeft)
-			gfDance.animation.play('danceRight');
-		else
-			gfDance.animation.play('danceLeft');
+		gfDance.animation.play("idle");
 
 		FlxG.log.add(curBeat);
 
