@@ -1,27 +1,5 @@
 package;
 
-import openfl.geom.Matrix;
-import openfl.display.BitmapData;
-import openfl.utils.AssetType;
-import lime.graphics.Image;
-import flixel.graphics.FlxGraphic;
-import openfl.utils.AssetManifest;
-import openfl.utils.AssetLibrary;
-import flixel.system.FlxAssets;
-
-// Lua
-
-#if cpp
-import llua.Convert;
-import llua.Lua;
-import llua.State;
-import llua.LuaL;
-#end
-
-import lime.app.Application;
-import lime.media.AudioContext;
-import lime.media.AudioManager;
-import openfl.Lib;
 import Section.SwagSection;
 import Song.SwagSong;
 import WiggleEffect.WiggleEffectType;
@@ -39,12 +17,14 @@ import flixel.addons.effects.FlxTrailArea;
 import flixel.addons.effects.chainable.FlxEffectSprite;
 import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
+import flixel.graphics.FlxGraphic;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
+import flixel.system.FlxAssets;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
@@ -56,10 +36,30 @@ import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
 import haxe.Json;
+import lime.app.Application;
+import lime.graphics.Image;
+import lime.media.AudioContext;
+import lime.media.AudioManager;
 import lime.utils.Assets;
+import openfl.Lib;
+import openfl.display.BitmapData;
 import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
+import openfl.geom.Matrix;
+import openfl.utils.AssetLibrary;
+import openfl.utils.AssetManifest;
+import openfl.utils.AssetType;
+
+using StringTools;
+// Lua
+
+#if cpp
+import llua.Convert;
+import llua.Lua;
+import llua.LuaL;
+import llua.State;
+#end
 
 #if windows
 import Discord.DiscordClient;
@@ -69,7 +69,6 @@ import Sys;
 import sys.FileSystem;
 #end
 
-using StringTools;
 
 class PlayState extends MusicBeatState
 {
@@ -535,7 +534,7 @@ class PlayState extends MusicBeatState
 
 		switch(SONG.song.toLowerCase())
 		{
-			case 'maybe-i-was-boring' | 'in-love-with-egirl' | 'internet-ruined':
+			case 'maybe-i-was-boring', 'in-love-with-egirl', 'internet-ruined':
 			{
 					curStage = 'London';
 					
@@ -2783,6 +2782,7 @@ class PlayState extends MusicBeatState
 		if (!inCutscene)
 			keyShit();
 
+		FlxG.camera.followLerp = elapsed * 8;
 
 		#if debug
 		if (FlxG.keys.justPressed.ONE)

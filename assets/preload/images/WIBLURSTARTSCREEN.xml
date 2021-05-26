@@ -18,18 +18,4 @@
 	<SubTexture name="GF Dancing Beat0013" x="0" y="0" width="703" height="694"/>
 	<SubTexture name="GF Dancing Beat0014" x="0" y="0" width="703" height="694"/>
 	<SubTexture name="GF Dancing Beat0015" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0016" x="703" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0017" x="703" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0018" x="1406" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0019" x="2109" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0020" x="2812" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0021" x="2812" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0022" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0023" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0024" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0025" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0026" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0027" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0028" x="0" y="0" width="703" height="694"/>
-	<SubTexture name="GF Dancing Beat0029" x="0" y="0" width="703" height="694"/>
 </TextureAtlas>

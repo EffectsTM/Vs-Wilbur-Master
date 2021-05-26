@@ -81,6 +81,10 @@ class Main extends Sprite
 
 		addChild(game);
 
+		FlxG.fixedTimestep = false;
+		FlxG.mouse.useSystemCursor = true;
+		FlxG.mouse.visible = false;
+
 		#if !mobile
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
