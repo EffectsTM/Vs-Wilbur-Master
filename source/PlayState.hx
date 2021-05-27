@@ -161,9 +161,8 @@ class PlayState extends MusicBeatState
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 
-	var phillyCityLights:FlxTypedGroup<FlxSprite>;
-	var phillyTrain:FlxSprite;
-	var trainSound:FlxSound;
+	var londonCityLights:FlxTypedGroup<FlxSprite>;
+	var londonPeople:FlxSprite;
 
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
@@ -566,7 +565,7 @@ class PlayState extends MusicBeatState
 				bg.updateHitbox();
 				add(bg);
 				
-				var people:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("LondonNight/people", "shared"));
+				var people:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("LondonNight/people"));
 				people.antialiasing = true;
 				people.scrollFactor.set(0.2, 0.2);
 				people.active = true;
@@ -574,23 +573,28 @@ class PlayState extends MusicBeatState
 				people.updateHitbox(); 
 				add(people);
 				
-				phillyCityLights = new FlxTypedGroup<FlxSprite>();
-				add(phillyCityLights);
+				londonCityLights = new FlxTypedGroup<FlxSprite>();
+				add(londonCityLights);
 
 				for (i in 0...5)
 				{
-						var windows:FlxSprite = new FlxSprite(bg.x).loadGraphic(Paths.image('londonNight/londonandskylight' + i, 'week3'));
-						windows.scrollFactor.set(0.2, 0.2);
-						windows.visible = true;
-						windows.setGraphicSize(Std.int(windows.width * 0.8));
-						windows.updateHitbox();
-						windows.antialiasing = true;
-						phillyCityLights.add(windows);
+					var windows:FlxSprite = new FlxSprite(bg.x, bg.y).loadGraphic(Paths.image('LondonNight/londonandskylight' + i));
+					windows.scrollFactor.set(0.2, 0.2);
+					windows.visible = true;
+					windows.setGraphicSize(Std.int(windows.width * 0.8));
+					windows.updateHitbox();
+					windows.antialiasing = true;
+					londonCityLights.add(windows);
 				}
 				
-				var evilSnow:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("LondonNight/sidewalk"));
-					evilSnow.antialiasing = true;
-				add(evilSnow);
+				var londonSidewalk:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("LondonNight/sidewalk"));
+				londonSidewalk.antialiasing = true;
+				add(londonSidewalk);
+
+				londonPeople = new FlxSprite(-480, 562).loadGraphic(Paths.image("LondonNight/people"));
+				londonPeople.scrollFactor.set(1.3, 1.3);
+				londonPeople.antialiasing = true;
+				add(londonPeople);
 			}
 			default:
 			{
@@ -634,6 +638,12 @@ class PlayState extends MusicBeatState
 		add(gf);
 		add(dad);
 		add(boyfriend);
+
+		if (londonPeople != null)
+		{
+			remove(londonPeople, true);
+			add(londonPeople);
+		}
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
 		// doof.x += 70;
@@ -1879,22 +1889,6 @@ class PlayState extends MusicBeatState
 				iconP1.animation.play(SONG.player1);
 			else
 				iconP1.animation.play('bf-old');
-		}
-
-		switch (curStage)
-		{
-			case 'philly':
-				if (trainMoving)
-				{
-					trainFrameTiming += elapsed;
-
-					if (trainFrameTiming >= 1 / 24)
-					{
-						updateTrainPos();
-						trainFrameTiming = 0;
-					}
-				}
-				// phillyCityLights.members[curLight].alpha -= (Conductor.crochet / 1000) * FlxG.elapsed;
 		}
 
 		super.update(elapsed);
@@ -3421,52 +3415,7 @@ class PlayState extends MusicBeatState
 	var trainFinishing:Bool = false;
 	var trainCooldown:Int = 0;
 
-	function trainStart():Void
-	{
-		trainMoving = true;
-		if (!trainSound.playing)
-			trainSound.play(true);
-	}
-
 	var startedMoving:Bool = false;
-
-	function updateTrainPos():Void
-	{
-		if (trainSound.time >= 4700)
-		{
-			startedMoving = true;
-			gf.playAnim('hairBlow');
-		}
-
-		if (startedMoving)
-		{
-			phillyTrain.x -= 400;
-
-			if (phillyTrain.x < -2000 && !trainFinishing)
-			{
-				phillyTrain.x = -1150;
-				trainCars -= 1;
-
-				if (trainCars <= 0)
-					trainFinishing = true;
-			}
-
-			if (phillyTrain.x < -4000 && trainFinishing)
-				trainReset();
-		}
-	}
-
-	function trainReset():Void
-	{
-		gf.playAnim('hairFall');
-		phillyTrain.x = FlxG.width + 200;
-		trainMoving = false;
-		// trainSound.stop();
-		// trainSound.time = 0;
-		trainCars = 8;
-		trainFinishing = false;
-		startedMoving = false;
-	}
 
 	function lightningStrikeShit():Void
 	{
@@ -3552,13 +3501,6 @@ class PlayState extends MusicBeatState
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
 
-		// HARDCODING FOR MILF ZOOMS!
-		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
-		{
-			FlxG.camera.zoom += 0.015;
-			camHUD.zoom += 0.03;
-		}
-
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
 		{
 			FlxG.camera.zoom += 0.015;
@@ -3587,57 +3529,27 @@ class PlayState extends MusicBeatState
 		}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
-			{
-				boyfriend.playAnim('hey', true);
-				dad.playAnim('cheer', true);
-			}
+		{
+			boyfriend.playAnim('hey', true);
+			dad.playAnim('cheer', true);
+		}
 
 		switch (curStage)
 		{
-			case 'school':
-				bgGirls.dance();
-
-			case 'mall':
-				upperBoppers.animation.play('bop', true);
-				bottomBoppers.animation.play('bop', true);
-				santa.animation.play('idle', true);
-
-			case 'limo':
-				grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-				{
-					dancer.dance();
-				});
-
-				if (FlxG.random.bool(10) && fastCarCanDrive)
-					fastCarDrive();
-			case "philly" | "Londonnight":
-				if (!trainMoving)
-					trainCooldown += 1;
-
-
+			case "Londonnight":
 				if (curBeat % 4 == 0)
 				{
-					phillyCityLights.forEach(function(light:FlxSprite)
+					londonCityLights.forEach(function(light:FlxSprite)
 					{
 						light.visible = false;
 					});
 
-					curLight = FlxG.random.int(0, phillyCityLights.length - 1);
+					curLight = FlxG.random.int(0, londonCityLights.length - 1);
 
-					phillyCityLights.members[curLight].visible = true;
-					// phillyCityLights.members[curLight].alpha = 1;
+					londonCityLights.members[curLight].visible = true;
+					londonCityLights.members[curLight].alpha = 1;
+					FlxTween.tween(londonCityLights.members[curLight], {alpha: 0.0}, 2.5);
 				}
-
-				if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8 && curStage == 'philly')
-				{
-					trainCooldown = FlxG.random.int(-4, 0);
-					trainStart();
-				}
-		}
-
-		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
-		{
-			lightningStrikeShit();
 		}
 	}
 
