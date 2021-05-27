@@ -39,7 +39,7 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
-			largeImageKey: 'iconog',
+			largeImageKey: 'icon',
 			largeImageText: "Vs. Wilbur"
 		});
 	}
