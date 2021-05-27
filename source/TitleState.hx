@@ -377,6 +377,7 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		danceLeft = !danceLeft;
 
+		gfDance.animation.stop();
 		gfDance.animation.play("idle");
 
 		FlxG.log.add(curBeat);
