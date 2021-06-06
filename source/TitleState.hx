@@ -113,8 +113,6 @@ class TitleState extends MusicBeatState
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			startIntro();
-			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-			FlxG.sound.music.fadeIn(4, 0, 0.7);
 		});
 		#end
 	}
@@ -223,7 +221,11 @@ class TitleState extends MusicBeatState
 		if (initialized)
 			skipIntro();
 		else
+		{
+			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+			FlxG.sound.music.fadeIn(4, 0, 0.7);
 			initialized = true;
+		}
 
 		// credGroup.add(credTextShit);
 	}
