@@ -13,11 +13,11 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 
+using StringTools;
 #if windows
 import Discord.DiscordClient;
 #end
 
-using StringTools;
 
 class StoryMenuState extends MusicBeatState
 {
@@ -368,7 +368,7 @@ class StoryMenuState extends MusicBeatState
 		{
 			txtTracklist.text += "\n" + i;
 		}
-		txtTracklist.text += "/n";
+		txtTracklist.text += "\n";
 
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
