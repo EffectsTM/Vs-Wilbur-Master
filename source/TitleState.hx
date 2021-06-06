@@ -159,7 +159,7 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(0, 0);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = true;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -362,7 +362,7 @@ class TitleState extends MusicBeatState
 				createCoolText(['effectstm', 'ito', 'austin', 'gedehari', 'presents...']);
 			// credTextShit.visible = true;
 			case 3:
-				addMoreText('the greatest mod ever');
+				addMoreText('The greatest mod ever');
 			// credTextShit.text += '\npresents...';
 			// credTextShit.addText();
 			case 4:
