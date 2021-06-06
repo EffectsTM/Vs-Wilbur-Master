@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="wilbur_cutscene.png">
+	<!-- Created with Adobe Flash CS6 version 12.0.0.481 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="wilbur hi0000" x="0" y="0" width="317" height="722" frameX="-2" frameY="-6" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0001" x="0" y="0" width="317" height="722" frameX="-2" frameY="-6" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0002" x="0" y="0" width="317" height="722" frameX="-2" frameY="-6" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0003" x="0" y="0" width="317" height="722" frameX="-2" frameY="-6" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0004" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0005" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0006" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0007" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0008" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0009" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0010" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur hi0011" x="317" y="0" width="318" height="725" frameX="0" frameY="0" frameWidth="319" frameHeight="728"/>
+	<SubTexture name="wilbur idle0000" x="635" y="0" width="344" height="720" frameX="0" frameY="-8" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0001" x="635" y="0" width="344" height="720" frameX="0" frameY="-8" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0002" x="0" y="725" width="328" height="726" frameX="-9" frameY="-5" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0003" x="0" y="725" width="328" height="726" frameX="-9" frameY="-5" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0004" x="328" y="725" width="319" height="729" frameX="-14" frameY="-1" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0005" x="328" y="725" width="319" height="729" frameX="-14" frameY="-1" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0006" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0007" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0008" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0009" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0010" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0011" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0012" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+	<SubTexture name="wilbur idle0013" x="647" y="725" width="319" height="728" frameX="-13" frameY="0" frameWidth="344" frameHeight="731"/>
+</TextureAtlas>

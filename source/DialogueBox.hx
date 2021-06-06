@@ -38,28 +38,6 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		super();
 
-		switch (PlayState.SONG.song.toLowerCase())
-		{
-			case 'senpai':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'thorns':
-				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'maybe-i-was-boring':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'in-love-with-egirl':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'internet-ruined':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'rifting':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-		}
-
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
@@ -77,56 +55,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'senpai':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-pixel');
-				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
-				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
-			case 'roses':
-				hasDialog = true;
-				FlxG.sound.play(Paths.sound('ANGRY_TEXT_BOX'));
-
-				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-senpaiMad');
-				box.animation.addByPrefix('normalOpen', 'SENPAI ANGRY IMPACT SPEECH', 24, false);
-				box.animation.addByIndices('normal', 'SENPAI ANGRY IMPACT SPEECH', [4], "", 24);
-
-			case 'thorns':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-evil');
-				box.animation.addByPrefix('normalOpen', 'Spirit Textbox spawn', 24, false);
-				box.animation.addByIndices('normal', 'Spirit Textbox spawn', [11], "", 24);
-
-				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
-				face.setGraphicSize(Std.int(face.width * 6));
-				add(face);
-			case 'maybe-i-was-boring':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
-				box.width = 200;
-				box.height = 200;
-				box.x = -100;
-				box.y = 375;
-			case 'in-love-with-egirl':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
-				box.width = 200;
-				box.height = 200;
-				box.x = -100;
-				box.y = 375;
-			case 'internet-ruined':
-				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
-				box.width = 200;
-				box.height = 200;
-				box.x = -100;
-				box.y = 375;
-			case 'rifting':
+			case 'maybe-i-was-boring', 'in-love-with-egirl', 'internet-ruined', 'rifting':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -142,122 +71,25 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
-			
-		if (PlayState.SONG.song.toLowerCase() == 'senpai')
-		{
-		    portraitLeft = new FlxSprite(-20, 40);
-		    portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-		    portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		    portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-		    portraitLeft.updateHitbox();
-		    portraitLeft.scrollFactor.set();
-		    add(portraitLeft);
-		    portraitLeft.visible = false;
-		}
-		
-		else if (PlayState.SONG.song.toLowerCase() == 'maybe-i-was-boring')
-		{
-		    portraitLeft = new FlxSprite(-1500, 50);
-		    portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
-		    portraitLeft.animation.addByPrefix('enter', 'wilbur Portrait Enter Instance 3', 24, false);
-		    portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.175));
-		    portraitLeft.updateHitbox();
-		    portraitLeft.scrollFactor.set();
-		    add(portraitLeft);
-		    portraitLeft.visible = false;
-		}
+		portraitLeft = new FlxSprite(-1500, 50);
+		portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
+		portraitLeft.animation.addByPrefix('enter', 'wilbur portrait enter instance 1', 24, false);
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		portraitLeft.flipX = true;
+		portraitLeft.antialiasing = true;
+		add(portraitLeft);
+		portraitLeft.visible = false;
 
-		else if (PlayState.SONG.song.toLowerCase() == 'in-love-with-egirl')
-		{
-		    portraitLeft = new FlxSprite(-1500, 50);
-		    portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
-		    portraitLeft.animation.addByPrefix('enter', 'wilbur Portrait Enter Instance 3', 24, false);
-		    portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.175));
-		    portraitLeft.updateHitbox();
-		    portraitLeft.scrollFactor.set();
-		    add(portraitLeft);
-		    portraitLeft.visible = false;
-		}
-	
-		else if (PlayState.SONG.song.toLowerCase() == 'internet-ruined')
-		{
-		    portraitLeft = new FlxSprite(-1500, 50);
-		    portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
-		    portraitLeft.animation.addByPrefix('enter', 'wilbur Portrait Enter Instance 3', 24, false);
-		    portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.175));
-		    portraitLeft.updateHitbox();
-		    portraitLeft.scrollFactor.set();
-		    add(portraitLeft);
-		    portraitLeft.visible = false;
-		}
-		
-		else if (PlayState.SONG.song.toLowerCase() == 'rifting')
-		{
-		    portraitLeft = new FlxSprite(-1500, 50);
-		    portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
-		    portraitLeft.animation.addByPrefix('enter', 'wilbur Portrait Enter Instance 3', 24, false);
-		    portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.175));
-		    portraitLeft.updateHitbox();
-		    portraitLeft.scrollFactor.set();
-		    add(portraitLeft);
-		    portraitLeft.visible = false;
-		}
-		
-		if (PlayState.SONG.song.toLowerCase() == 'senpai')
-		{
-		    portraitRight = new FlxSprite(0, 40);
-		    portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		    portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		    portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		    portraitRight.updateHitbox();
-		    portraitRight.scrollFactor.set();
-		    add(portraitRight);
-		    portraitRight.visible = false;
-		}
-		else if (PlayState.SONG.song.toLowerCase() == 'maybe-i-was-boring')
-		{ 
-		    portraitRight = new FlxSprite(-1500, 100);
-		    portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-		    portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
-		    portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
-		    portraitRight.updateHitbox();
-		    portraitRight.scrollFactor.set();
-		    add(portraitRight);
-		    portraitRight.visible = false;
-		}
-		else if (PlayState.SONG.song.toLowerCase() == 'in-love-with-egirl')
-		{ 
-		    portraitRight = new FlxSprite(-1500, 100);
-		    portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-		    portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
-		    portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
-		    portraitRight.updateHitbox();
-		    portraitRight.scrollFactor.set();
-		    add(portraitRight);
-		    portraitRight.visible = false;
-	    }
-		else if (PlayState.SONG.song.toLowerCase() == 'internet-ruined')
-		{ 
-		    portraitRight = new FlxSprite(-1500, 100);
-		    portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-		    portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
-		    portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
-		    portraitRight.updateHitbox();
-		    portraitRight.scrollFactor.set();
-		    add(portraitRight);
-		    portraitRight.visible = false;
-        }
-		else if (PlayState.SONG.song.toLowerCase() == 'rifting')
-		{ 
-		    portraitRight = new FlxSprite(-1500, 100);
-		    portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-		    portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
-		    portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
-		    portraitRight.updateHitbox();
-		    portraitRight.scrollFactor.set();
-		    add(portraitRight);
-		    portraitRight.visible = false;
-		}
+		portraitRight = new FlxSprite(-1500, 100);
+		portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
+		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		add(portraitRight);
+		portraitRight.visible = false;
+		portraitRight.alpha = 1.0;
 		
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -270,11 +102,6 @@ class DialogueBox extends FlxSpriteGroup
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 		add(handSelect);
 
-
-		if (!talkingRight)
-		{
-			// box.flipX = true;
-		}
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
 		dropText.font = 'Pixel Arial 11 Bold';
@@ -327,8 +154,6 @@ class DialogueBox extends FlxSpriteGroup
 		if (FlxG.keys.justPressed.ANY  && dialogueStarted == true)
 		{
 			remove(dialogue);
-				
-			FlxG.sound.play(Paths.sound('clickText'), 0.8);
 
 			if (dialogueList[1] == null && dialogueList[0] != null)
 			{
@@ -336,7 +161,7 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					isEnding = true;
 
-					if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns' || PlayState.SONG.song.toLowerCase() == 'maybe-i-was-boring' || PlayState.SONG.song.toLowerCase() == 'internet-ruined' || PlayState.SONG.song.toLowerCase() == 'in-love-with-egirl' || PlayState.SONG.song.toLowerCase() == 'rifting')
+					if (PlayState.SONG.song.toLowerCase() == 'maybe-i-was-boring' || PlayState.SONG.song.toLowerCase() == 'internet-ruined' || PlayState.SONG.song.toLowerCase() == 'in-love-with-egirl' || PlayState.SONG.song.toLowerCase() == 'rifting')
 						FlxG.sound.music.fadeOut(2.2, 0);
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
@@ -358,6 +183,7 @@ class DialogueBox extends FlxSpriteGroup
 			}
 			else
 			{
+				FlxG.sound.play(Paths.sound('clickText'), 0.8);
 				dialogueList.remove(dialogueList[0]);
 				startDialogue();
 			}
@@ -396,6 +222,8 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.animation.play('enter');
 				}
 		}
+
+		trace(portraitLeft.x);
 	}
 
 	function cleanDialog():Void

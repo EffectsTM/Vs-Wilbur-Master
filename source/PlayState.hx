@@ -2,54 +2,26 @@ package;
 
 import Section.SwagSection;
 import Song.SwagSong;
-import WiggleEffect.WiggleEffectType;
-import flixel.FlxBasic;
 import flixel.FlxCamera;
 import flixel.FlxG;
-import flixel.FlxGame;
 import flixel.FlxObject;
 import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.FlxSubState;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.addons.effects.FlxTrail;
-import flixel.addons.effects.FlxTrailArea;
-import flixel.addons.effects.chainable.FlxEffectSprite;
-import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.graphics.FlxGraphic;
-import flixel.graphics.atlas.FlxAtlas;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
-import flixel.system.FlxAssets;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
-import flixel.util.FlxCollision;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
-import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
-import haxe.Json;
-import lime.app.Application;
-import lime.graphics.Image;
-import lime.media.AudioContext;
-import lime.media.AudioManager;
-import lime.utils.Assets;
 import openfl.Lib;
 import openfl.display.BitmapData;
-import openfl.display.BlendMode;
-import openfl.display.StageQuality;
-import openfl.filters.ShaderFilter;
 import openfl.geom.Matrix;
-import openfl.utils.AssetLibrary;
-import openfl.utils.AssetManifest;
-import openfl.utils.AssetType;
 
 using StringTools;
 // Lua
@@ -161,8 +133,14 @@ class PlayState extends MusicBeatState
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 
+	var sequenceTimes:Array<Float> = [1.5, 1.9, 2.7, 3.4, 4.0, 6.60];
+
 	var londonCityLights:FlxTypedGroup<FlxSprite>;
 	var londonPeople:FlxSprite;
+
+	var londonCityLightsTween:FlxTween;
+
+	var sequenceIndex:Int = 0;
 
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
@@ -173,6 +151,8 @@ class PlayState extends MusicBeatState
 	var santa:FlxSprite;
 
 	var fc:Bool = true;
+
+	var doof:DialogueBox;
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
@@ -645,7 +625,7 @@ class PlayState extends MusicBeatState
 			add(londonPeople);
 		}
 
-		var doof:DialogueBox = new DialogueBox(false, dialogue);
+		doof = new DialogueBox(false, dialogue);
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
@@ -790,43 +770,8 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
-				case "winter-horrorland":
-					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.scrollFactor.set();
-					camHUD.visible = false;
-
-					new FlxTimer().start(0.1, function(tmr:FlxTimer)
-					{
-						remove(blackScreen);
-						FlxG.sound.play(Paths.sound('Lights_Turn_On'));
-						camFollow.y = -2050;
-						camFollow.x += 200;
-						FlxG.camera.focusOn(camFollow.getPosition());
-						FlxG.camera.zoom = 1.5;
-
-						new FlxTimer().start(0.8, function(tmr:FlxTimer)
-						{
-							camHUD.visible = true;
-							remove(blackScreen);
-							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-								ease: FlxEase.quadInOut,
-								onComplete: function(twn:FlxTween)
-								{
-									startCountdown();
-								}
-							});
-						});
-					});
-				case 'senpai':
-					schoolIntro(doof);
-				case 'roses':
-					FlxG.sound.play(Paths.sound('ANGRY'));
-					schoolIntro(doof);
-				case 'thorns':
-					schoolIntro(doof);
 				case 'maybe-i-was-boring':
-					schoolIntro(doof);
+					wilburIntro();
 				default:
 					startCountdown();
 			}
@@ -846,32 +791,76 @@ class PlayState extends MusicBeatState
 		super.create();
 	}
 
-	function schoolIntro(?dialogueBox:DialogueBox):Void
+	// Initialize Wibur intro
+	function wilburIntro()
+	{		
+		// delete normal wilbur first loololololol this is inefficient
+		dad.destroy();
+		dad = new Character(100, 100, "wilburcutscene");
+		dad.visible = false;
+		add(dad);
+
+		// center camera to bf
+		camFollow.x = boyfriend.getMidpoint().x - 100;
+		camFollow.y = boyfriend.getMidpoint().y - 100;
+
+		// hud go poof
+		camHUD.visible = false;
+
+		// tween cam zoom in
+		FlxTween.tween(FlxG.camera, {zoom: 1.3}, 1.2, {ease: FlxEase.sineInOut});
+
+		for (time in sequenceTimes)
+		{
+			new FlxTimer().start(time, wilburIntroSequence);
+		}
+
+		FlxG.sound.play(Paths.sound("wilburCutsceneSound"));
+	}
+
+	// Wilbur intro timer callback
+	function wilburIntroSequence(timer:FlxTimer)
+	{
+		switch (sequenceIndex)
+		{
+			case 0:
+				camFollow.x = dad.getMidpoint().x + 100;
+				camFollow.y = dad.getMidpoint().y - 160;
+				FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
+			case 1:
+				dad.x = -120;
+				FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
+				dad.visible = true;
+			case 2:
+				dad.animation.play("hi");
+			case 3:
+				dad.animation.play("idle");
+			case 4:
+				boyfriend.animation.play("scared");
+				camFollow.x = boyfriend.getMidpoint().x - 100;
+				camFollow.y = boyfriend.getMidpoint().y - 100;
+			case 5:
+				dad.destroy();
+				dad = new Character(100, 100, SONG.player2);
+				add(dad);
+
+				FlxG.camera.zoom = defaultCamZoom;
+				camFollow.x = dad.getMidpoint().x - 5;
+				camFollow.y = dad.getMidpoint().y - 5;
+				FlxG.camera.focusOn(camFollow.getPosition());
+				camHUD.visible = true;
+				wilburStartDialogue();
+		}
+
+		sequenceIndex++;
+	}
+
+	// Start Wilbur dialogue
+	function wilburStartDialogue():Void
 	{
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		black.scrollFactor.set();
 		add(black);
-
-		var red:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFFff1b31);
-		red.scrollFactor.set();
-
-		var senpaiEvil:FlxSprite = new FlxSprite();
-		senpaiEvil.frames = Paths.getSparrowAtlas('weeb/senpaiCrazy');
-		senpaiEvil.animation.addByPrefix('idle', 'Senpai Pre Explosion', 24, false);
-		senpaiEvil.setGraphicSize(Std.int(senpaiEvil.width * 6));
-		senpaiEvil.scrollFactor.set();
-		senpaiEvil.updateHitbox();
-		senpaiEvil.screenCenter();
-
-		if (SONG.song.toLowerCase() == 'roses' || SONG.song.toLowerCase() == 'thorns')
-		{
-			remove(black);
-
-			if (SONG.song.toLowerCase() == 'thorns')
-			{
-				add(red);
-			}
-		}
 
 		new FlxTimer().start(0.3, function(tmr:FlxTimer)
 		{
@@ -883,47 +872,8 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				if (dialogueBox != null)
-				{
-					inCutscene = true;
-
-					if (SONG.song.toLowerCase() == 'thorns')
-					{
-						add(senpaiEvil);
-						senpaiEvil.alpha = 0;
-						new FlxTimer().start(0.3, function(swagTimer:FlxTimer)
-						{
-							senpaiEvil.alpha += 0.15;
-							if (senpaiEvil.alpha < 1)
-							{
-								swagTimer.reset();
-							}
-							else
-							{
-								senpaiEvil.animation.play('idle');
-								FlxG.sound.play(Paths.sound('Senpai_Dies'), 1, false, null, true, function()
-								{
-									remove(senpaiEvil);
-									remove(red);
-									FlxG.camera.fade(FlxColor.WHITE, 0.01, true, function()
-									{
-										add(dialogueBox);
-									}, true);
-								});
-								new FlxTimer().start(3.2, function(deadTime:FlxTimer)
-								{
-									FlxG.camera.fade(FlxColor.WHITE, 1.6, false);
-								});
-							}
-						});
-					}
-					else
-					{
-						add(dialogueBox);
-					}
-				}
-				else
-					startCountdown();
+				inCutscene = true;
+				add(doof);
 
 				remove(black);
 			}
@@ -941,7 +891,6 @@ class PlayState extends MusicBeatState
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
-
 
 		#if cpp
 		if (executeModchart) // dude I hate lua (jkjkjkjk)
@@ -2146,12 +2095,9 @@ class PlayState extends MusicBeatState
 					case 'senpai-angry':
 						camFollow.y = dad.getMidpoint().y - 430;
 						camFollow.x = dad.getMidpoint().x - 100;
-					case 'wilbur':
-						camFollow.y = dad.getMidpoint().y - -5;
-						camFollow.x = dad.getMidpoint().x - -5;
-					case 'wilburhappy':
-						camFollow.y = dad.getMidpoint().y - -5;
-						camFollow.x = dad.getMidpoint().x - -5;
+					case 'wilbur', 'wilburhappy':
+						camFollow.y = dad.getMidpoint().y - 5;
+						camFollow.x = dad.getMidpoint().x - 5;
 				}
 
 				if (dad.curCharacter == 'mom')
