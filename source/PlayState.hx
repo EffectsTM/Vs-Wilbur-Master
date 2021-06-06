@@ -772,6 +772,8 @@ class PlayState extends MusicBeatState
 			{
 				case 'maybe-i-was-boring':
 					wilburIntro();
+				case 'in-love-with-egirl', 'internet-ruined', 'rifting':
+					wilburStartDialogue(false);
 				default:
 					startCountdown();
 			}
@@ -856,28 +858,37 @@ class PlayState extends MusicBeatState
 	}
 
 	// Start Wilbur dialogue
-	function wilburStartDialogue():Void
+	function wilburStartDialogue(withFade:Bool = true):Void
 	{
-		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-		black.scrollFactor.set();
-		add(black);
-
-		new FlxTimer().start(0.3, function(tmr:FlxTimer)
+		var startInstant:() -> Void = function()
 		{
-			black.alpha -= 0.15;
+			inCutscene = true;
+			add(doof);
+		};
+		
+		if (withFade)
+		{
+			var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+			black.scrollFactor.set();
+			add(black);
 
-			if (black.alpha > 0)
+			new FlxTimer().start(0.3, function(tmr:FlxTimer)
 			{
-				tmr.reset(0.3);
-			}
-			else
-			{
-				inCutscene = true;
-				add(doof);
+				black.alpha -= 0.15;
 
-				remove(black);
-			}
-		});
+				if (black.alpha > 0)
+				{
+					tmr.reset(0.3);
+				}
+				else
+				{
+					startInstant();
+					remove(black);
+				}
+			});
+		}
+		else
+			startInstant();
 	}
 
 	var startTimer:FlxTimer;

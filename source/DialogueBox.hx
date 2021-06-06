@@ -71,6 +71,8 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
+		// Hacky solution to two Wilbur expressions
+		
 		portraitLeft = new FlxSprite(-1500, 50);
 		portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
 		portraitLeft.animation.addByPrefix('enter', 'wilbur portrait enter instance 1', 24, false);
@@ -81,15 +83,14 @@ class DialogueBox extends FlxSpriteGroup
 		add(portraitLeft);
 		portraitLeft.visible = false;
 
-		portraitRight = new FlxSprite(-1500, 100);
+		portraitRight = new FlxSprite(-1500, 50);
 		portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
 		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
+		portraitRight.antialiasing = true;
 		add(portraitRight);
 		portraitRight.visible = false;
-		portraitRight.alpha = 1.0;
 		
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -99,9 +100,8 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
-		add(handSelect);
-
+		//handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
+		//add(handSelect);
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
 		dropText.font = 'Pixel Arial 11 Bold';
@@ -223,7 +223,7 @@ class DialogueBox extends FlxSpriteGroup
 				}
 		}
 
-		trace(portraitLeft.x);
+		portraitRight.setPosition(portraitLeft.x, portraitLeft.y);
 	}
 
 	function cleanDialog():Void

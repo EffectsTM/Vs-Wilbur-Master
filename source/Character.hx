@@ -116,8 +116,8 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('wilbur_cutscene', 'shared');
 				frames = tex;
 
-				animation.addByPrefix('idle', "wilbur idle", 24);
-				animation.addByPrefix('hi', "wilbur hi", 24, false);
+				animation.addByPrefix('idle', "wilbur standing", 24);
+				animation.addByPrefix('hi', "wilbur saying hi", 24, false);
 
 				playAnim('idle');
 			case 'bf':
