@@ -160,7 +160,7 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(0, 0);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = true;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -385,10 +385,10 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['effectstm', 'ito', 'turtle', 'presents...']);
+				createCoolText(['effectstm', 'ito', 'Austin', 'Gedehari']);
 			// credTextShit.visible = true;
 			case 3:
-				addMoreText('the greatest mod ever');
+				addMoreText('The greatest mod ever');
 			// credTextShit.text += '\npresents...';
 			// credTextShit.addText();
 			case 4:
