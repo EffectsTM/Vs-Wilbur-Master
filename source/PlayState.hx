@@ -3548,7 +3548,10 @@ class PlayState extends MusicBeatState
 
 					londonCityLights.members[curLight].visible = true;
 					londonCityLights.members[curLight].alpha = 1;
-					FlxTween.tween(londonCityLights.members[curLight], {alpha: 0.0}, 2.5);
+
+					if (londonCityLightsTween != null)
+						londonCityLightsTween.cancel();
+					londonCityLightsTween = FlxTween.tween(londonCityLights.members[curLight], {alpha: 0.0}, 2.5);
 				}
 		}
 	}
