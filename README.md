@@ -1,5 +1,7 @@
 # Friday Night Funkin' : Vs. Wilbur
 
+![License](https://img.shields.io/github/license/EffectsTM/Vs-Wilbur-Master?style=flat-square) ![Version](https://img.shields.io/github/v/release/EffectsTM/Vs-Wilbur-Master?style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/EffectsTM/Vs-Wilbur-Master?style=flat-square)
+
 description pending
 
 # License
@@ -23,4 +25,9 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 
 ### Vs. Wilbur
 
-- Will be filled later.
+![Modern Media](img/modern_media.png)
+
+- [Effects](https://www.youtube.com/channel/UCRwExVyoZ3Nw5sBzAlRJ6fw) - Programming, art, and music
+- [gedehari](https://twitter.com/gedehari) - Programming
+- [Austin](http://linktr.ee/DeadskullDubs) - Music
+- [Ito](https://twitter.com/ItoSaihara_?s=09) - Art
