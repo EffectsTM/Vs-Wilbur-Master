@@ -29,5 +29,5 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 
 - [Effects](https://www.youtube.com/channel/UCRwExVyoZ3Nw5sBzAlRJ6fw) - Programming, art, and music
 - [gedehari](https://twitter.com/gedehari) - Programming
-- [Austin](http://linktr.ee/DeadskullDubs) - Music
+- [Deadskull](http://linktr.ee/DeadskullDubs) - Music
 - [Ito](https://twitter.com/ItoSaihara_?s=09) - Art
