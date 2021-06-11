@@ -361,7 +361,7 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['effectstm', 'ito', 'austin', 'gedehari', 'presents...']);
+				createCoolText(['effectstm', 'ito', 'deadskull', 'gedehari', 'presents...']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('The greatest mod ever');

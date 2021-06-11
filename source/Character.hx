@@ -90,9 +90,9 @@ class Character extends FlxSprite
 
 				addOffset("idle");
 				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", 10, -60);
-				addOffset("singLEFT", 250, -23);
-				addOffset("singDOWN", 20, -160);
+				addOffset("singRIGHT", -10, -60);
+				addOffset("singLEFT", 250, -20);
+				addOffset("singDOWN", 10, -70);
 
 				playAnim('idle');
 			case 'wilburhappy':
