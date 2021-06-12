@@ -11,6 +11,7 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
+import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
@@ -33,8 +34,11 @@ import sys.thread.Thread;
 
 class TitleState extends MusicBeatState
 {
+	var textY:Float = 130;
+	
 	static var initialized:Bool = false;
 
+	var bg:FlxSprite;
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
@@ -86,10 +90,13 @@ class TitleState extends MusicBeatState
 		#end
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
+		trace("Save bind");
 
 		KadeEngineData.initSave();
+		trace("Kade Engine save");
 
 		Highscore.load();
+		trace("Highscore load");
 
 		if (FlxG.save.data.weekUnlocked != null)
 		{
@@ -104,16 +111,16 @@ class TitleState extends MusicBeatState
 			if (!StoryMenuState.weekUnlocked[0])
 				StoryMenuState.weekUnlocked[0] = true;
 		}
+		trace("Week unlocked");
 
 		#if FREEPLAY
 		FlxG.switchState(new FreeplayState());
 		#elseif CHARTING
 		FlxG.switchState(new ChartingState());
 		#else
-		new FlxTimer().start(1, function(tmr:FlxTimer)
-		{
-			startIntro();
-		});
+		trace("starting intro");
+		startIntro();
+		trace("started intro");
 		#end
 	}
 
@@ -151,10 +158,8 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('colorBGTitle'));
-		// bg.antialiasing = true;
-		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
+		bg = new FlxSprite().loadGraphic(Paths.image('colorBGTitle'));
+		bg.antialiasing = true;
 		add(bg);
 
 		logoBl = new FlxSprite(0, 0);
@@ -184,11 +189,6 @@ class TitleState extends MusicBeatState
 		// titleText.screenCenter(X);
 		add(titleText);
 
-		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
-		logo.screenCenter();
-		logo.antialiasing = true;
-		// add(logo);
-
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
 
@@ -197,6 +197,7 @@ class TitleState extends MusicBeatState
 		textGroup = new FlxGroup();
 
 		blackScreen = new FlxSprite().loadGraphic(Paths.image('colorBG'));
+		blackScreen.antialiasing = true;
 		credGroup.add(blackScreen);
 
 		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
@@ -206,13 +207,13 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		/* ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
 		add(ngSpr);
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
 		ngSpr.screenCenter(X);
-		ngSpr.antialiasing = true;
+		ngSpr.antialiasing = true; */
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
@@ -313,6 +314,12 @@ class TitleState extends MusicBeatState
 			skipIntro();
 		}
 
+		bg.scale.x = FlxMath.lerp(bg.scale.x, 1.0, elapsed * 3);
+		bg.scale.y = FlxMath.lerp(bg.scale.x, 1.0, elapsed * 3);
+		
+		blackScreen.scale.x = FlxMath.lerp(blackScreen.scale.x, 1.0, elapsed * 3);
+		blackScreen.scale.y = FlxMath.lerp(blackScreen.scale.y, 1.0, elapsed * 3);
+
 		super.update(elapsed);
 	}
 
@@ -322,7 +329,7 @@ class TitleState extends MusicBeatState
 		{
 			var money:Alphabet = new Alphabet(0, 0, textArray[i], true, false);
 			money.screenCenter(X);
-			money.y += (i * 60) + 130;
+			money.y += (i * 60) + textY;
 			credGroup.add(money);
 			textGroup.add(money);
 		}
@@ -332,7 +339,7 @@ class TitleState extends MusicBeatState
 	{
 		var coolText:Alphabet = new Alphabet(0, 0, text, true, false);
 		coolText.screenCenter(X);
-		coolText.y += (textGroup.length * 60) + 130;
+		coolText.y += (textGroup.length * 60) + textY;
 		credGroup.add(coolText);
 		textGroup.add(coolText);
 	}
@@ -358,9 +365,16 @@ class TitleState extends MusicBeatState
 
 		FlxG.log.add(curBeat);
 
+		bg.scale.x = 1.02;
+		bg.scale.y = 1.02;
+		
+		blackScreen.scale.x = 1.02;
+		blackScreen.scale.y = 1.02;
+
 		switch (curBeat)
 		{
 			case 1:
+				textY = 175;
 				createCoolText(['effectstm', 'ito', 'deadskull', 'gedehari', 'presents...']);
 			// credTextShit.visible = true;
 			case 3:
@@ -373,20 +387,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = 'In association \nwith';
 			// credTextShit.screenCenter();
 			case 5:
-				if (Main.watermarks)
-					createCoolText(['Made With Kade Engine']);
+				textY = 275;
+				createCoolText(['Made With Kade Engine']);
 			case 7:
-				if (Main.watermarks)
-					addMoreText('By KadeDeveloper');
-				else
-				{
-					addMoreText('Newgrounds');
-					ngSpr.visible = true;
-				}
+				addMoreText('By KadeDeveloper');
 			// credTextShit.text += '\nNewgrounds';
 			case 8:
 				deleteCoolText();
-				ngSpr.visible = false;
 			// credTextShit.visible = false;
 
 			// credTextShit.text = 'Shoutouts Tom Fulp';
@@ -403,6 +410,7 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
+				textY = 250;
 				addMoreText('Friday Night Funkin');
 			// credTextShit.visible = true;
 			case 14:
