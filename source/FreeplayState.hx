@@ -10,12 +10,12 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 
+using StringTools;
 
 #if windows
 import Discord.DiscordClient;
 #end
 
-using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
@@ -44,6 +44,11 @@ class FreeplayState extends MusicBeatState
 			var data:Array<String> = initSonglist[i].split(':');
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
+
+		// secret song idk
+		if (FlxG.save.data.piss != null)
+			if (FlxG.save.data.piss)
+				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
 
 		/* 
 			if (FlxG.sound.music != null)
