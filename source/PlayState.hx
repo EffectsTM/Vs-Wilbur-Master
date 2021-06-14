@@ -135,6 +135,8 @@ class PlayState extends MusicBeatState
 
 	var sequenceTimes:Array<Float> = [1.5, 1.9, 2.7, 3.4, 4.0, 6.60];
 
+	var bg:FlxSprite;
+	
 	var londonCityLights:FlxTypedGroup<FlxSprite>;
 	var londonPeople:FlxSprite;
 
@@ -519,7 +521,7 @@ class PlayState extends MusicBeatState
 				
 				defaultCamZoom = 0.90;
 				
-				var bg:FlxSprite = new FlxSprite(-400, -500).loadGraphic(Paths.image('London/londonandsky'));
+				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image('London/londonandsky'));
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.2, 0.2);
 				bg.active = false;
@@ -537,7 +539,7 @@ class PlayState extends MusicBeatState
 				
 				defaultCamZoom = 0.90;
 			
-				var bg:FlxSprite = new FlxSprite(-400, -500).loadGraphic(Paths.image("LondonNight/londonandsky"));
+				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image("LondonNight/londonandsky"));
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.2, 0.2);
 				bg.active = false;
@@ -576,6 +578,19 @@ class PlayState extends MusicBeatState
 				londonPeople.antialiasing = true;
 				add(londonPeople);
 			}
+			case "unfinished-symphony":
+			{
+				curStage = 'Lmanburg';
+
+				defaultCamZoom = 0.90;
+
+				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image("Lmanburg/lmanburgdeznuts", "shared"));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(0.9, 0.9);
+				bg.active = false;
+				bg.updateHitbox();
+				add(bg);
+			}
 			default:
 			{
 				defaultCamZoom = 0.9;
@@ -606,8 +621,20 @@ class PlayState extends MusicBeatState
 		}
 		var gfVersion:String = 'gf';
 
+		switch (curStage)
+		{
+			case 'Lmanburg':
+				gfVersion = 'gf-van';
+		}
+
 		gf = new Character(400, 130, gfVersion);
 		gf.scrollFactor.set(0.95, 0.95);
+
+		switch (gfVersion)
+		{
+			case 'gf-van':
+				gf.setPosition(400, 130);
+		}
 
 		dad = new Character(100, 100, SONG.player2);
 
@@ -2244,9 +2271,6 @@ class PlayState extends MusicBeatState
 	
 					if (!daNote.mustPress && daNote.wasGoodHit)
 					{
-						if (SONG.song != 'Maybe-I-Was-Boring')
-							camZooming = true;
-
 						var altAnim:String = "";
 	
 						if (SONG.notes[Math.floor(curStep / 16)] != null)

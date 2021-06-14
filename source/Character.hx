@@ -61,6 +61,12 @@ class Character extends FlxSprite
 				addOffset('scared', -2, -17);
 
 				playAnim('danceRight');
+			case 'gf-van':
+				tex = Paths.getSparrowAtlas('Van_assets', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'GF Dancing Beat', 24, false);
+
+				playAnim('idle');
 			case 'dad':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('DADDY_DEAREST','shared');
@@ -110,6 +116,23 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", 10, -60);
 				addOffset("singLEFT", 250, -23);
 				addOffset("singDOWN", 20, -160);
+
+				playAnim('idle');
+			case "wilburmc":
+				tex = Paths.getSparrowAtlas('wilburmc_assets', 'shared');
+				frames = tex;
+
+				animation.addByPrefix('idle', "wilbur mc idle instance", 24, false);
+				animation.addByPrefix('singUP', "wilbur mc up sprite instance", 24, false);
+				animation.addByPrefix('singDOWN', "wilbur mc down sprite instance", 24, false);
+				animation.addByPrefix('singLEFT', "wilbur mc left instance", 24, false);
+				animation.addByPrefix('singRIGHT', "wilbur mc right instance", 24, false);
+
+				/* addOffset("idle");
+				addOffset("singUP", 14, 71);
+				addOffset("singRIGHT", 10, -60);
+				addOffset("singLEFT", 250, -23);
+				addOffset("singDOWN", 20, -160); */
 
 				playAnim('idle');
 			case 'wilburcutscene':
@@ -236,46 +259,6 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
-
-				case 'gf-christmas':
-					if (!animation.curAnim.name.startsWith('hair'))
-					{
-						danced = !danced;
-
-						if (danced)
-							playAnim('danceRight');
-						else
-							playAnim('danceLeft');
-					}
-
-				case 'gf-car':
-					if (!animation.curAnim.name.startsWith('hair'))
-					{
-						danced = !danced;
-
-						if (danced)
-							playAnim('danceRight');
-						else
-							playAnim('danceLeft');
-					}
-				case 'gf-pixel':
-					if (!animation.curAnim.name.startsWith('hair'))
-					{
-						danced = !danced;
-
-						if (danced)
-							playAnim('danceRight');
-						else
-							playAnim('danceLeft');
-					}
-
-				case 'spooky':
-					danced = !danced;
-
-					if (danced)
-						playAnim('danceRight');
-					else
-						playAnim('danceLeft');
 				default:
 					playAnim('idle');
 			}
