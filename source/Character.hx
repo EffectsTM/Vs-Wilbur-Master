@@ -128,11 +128,11 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', "wilbur mc left instance", 24, false);
 				animation.addByPrefix('singRIGHT', "wilbur mc right instance", 24, false);
 
-				/* addOffset("idle");
-				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", 10, -60);
-				addOffset("singLEFT", 250, -23);
-				addOffset("singDOWN", 20, -160); */
+				addOffset("idle", -10, -50);
+				addOffset("singUP", -10, -50);
+				addOffset("singRIGHT", -10, -50);
+				addOffset("singLEFT", -10, -50);
+				addOffset("singDOWN", -10, -50);
 
 				playAnim('idle');
 			case 'wilburcutscene':

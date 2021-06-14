@@ -633,7 +633,7 @@ class PlayState extends MusicBeatState
 		switch (gfVersion)
 		{
 			case 'gf-van':
-				gf.setPosition(400, 130);
+				gf.setPosition(100, -130);
 		}
 
 		dad = new Character(100, 100, SONG.player2);
