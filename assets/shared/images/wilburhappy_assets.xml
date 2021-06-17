@@ -4,66 +4,66 @@
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="wilburhappy DOWN POSE0000" x="0" y="0" width="443" height="699"/>
 	<SubTexture name="wilburhappy DOWN POSE0001" x="0" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0002" x="443" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0003" x="443" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0004" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0005" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0006" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0007" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0008" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0009" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0010" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0011" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0012" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0013" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy DOWN POSE0014" x="886" y="0" width="443" height="699"/>
-	<SubTexture name="wilburhappy Idle0000" x="1329" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0001" x="1329" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0002" x="1722" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0003" x="1722" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0004" x="2115" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0005" x="2115" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0006" x="2508" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0007" x="2508" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0008" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0009" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0010" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0011" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0012" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Idle0013" x="2901" y="0" width="393" height="830"/>
-	<SubTexture name="wilburhappy Left Pose0000" x="3294" y="0" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0001" x="3294" y="0" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0002" x="0" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0003" x="0" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0004" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0005" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0006" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0007" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0008" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Left Pose0009" x="607" y="830" width="607" height="819"/>
-	<SubTexture name="wilburhappy Pose Left0000" x="1214" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0001" x="1214" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0002" x="1792" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0003" x="1792" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0004" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0005" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0006" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0007" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0008" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Pose Left0009" x="2370" y="830" width="578" height="773"/>
-	<SubTexture name="wilburhappy Up Pose0000" x="2948" y="830" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0001" x="2948" y="830" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0002" x="3363" y="830" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0003" x="3363" y="830" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0004" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0005" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0006" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0007" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0008" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0009" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0010" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0011" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0012" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0013" x="0" y="1696" width="415" height="866"/>
-	<SubTexture name="wilburhappy Up Pose0014" x="0" y="1696" width="415" height="866"/>
+	<SubTexture name="wilburhappy DOWN POSE0002" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0003" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0004" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0005" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0006" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0007" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0008" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0009" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0010" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0011" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0012" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0013" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy DOWN POSE0014" x="507" y="0" width="443" height="699"/>
+	<SubTexture name="wilburhappy Idle0000" x="1014" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0001" x="1014" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0002" x="1471" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0003" x="1471" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0004" x="1928" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0005" x="1928" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0006" x="2385" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0007" x="2385" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0008" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0009" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0010" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0011" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0012" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Idle0013" x="2842" y="0" width="393" height="830"/>
+	<SubTexture name="wilburhappy Left Pose0000" x="3299" y="0" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0001" x="3299" y="0" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0002" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0003" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0004" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0005" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0006" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0007" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0008" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Left Pose0009" x="0" y="894" width="607" height="819"/>
+	<SubTexture name="wilburhappy Pose Left0000" x="671" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0001" x="671" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0002" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0003" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0004" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0005" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0006" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0007" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0008" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Pose Left0009" x="1313" y="894" width="578" height="773"/>
+	<SubTexture name="wilburhappy Up Pose0000" x="1955" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0001" x="1955" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0002" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0003" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0004" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0005" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0006" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0007" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0008" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0009" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0010" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0011" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0012" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0013" x="2418" y="894" width="399" height="866"/>
+	<SubTexture name="wilburhappy Up Pose0014" x="2418" y="894" width="399" height="866"/>
 </TextureAtlas>

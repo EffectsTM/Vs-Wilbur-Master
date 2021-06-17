@@ -626,6 +626,13 @@ class PlayState extends MusicBeatState
 			case 'Lmanburg':
 				gfVersion = 'gf-van';
 		}
+		
+		switch (SONG.song.toLowerCase())
+		{
+			case 'rifting':
+				gfVersion = 'gf_dark';
+		}
+
 
 		gf = new Character(400, 130, gfVersion);
 		gf.scrollFactor.set(0.95, 0.95);
@@ -634,6 +641,10 @@ class PlayState extends MusicBeatState
 		{
 			case 'gf-van':
 				gf.setPosition(100, -130);
+			case 'gf':
+				gf.setPosition(250, 150);
+			case 'gf_dark':
+				gf.setPosition(250, 150);
 		}
 
 		dad = new Character(100, 100, SONG.player2);

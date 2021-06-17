@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="endscreenlol.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="background0000" x="0" y="0" width="1907" height="1083"/>
+	<SubTexture name="background0001" x="1971" y="0" width="1907" height="1083"/>
+	<SubTexture name="background0002" x="3942" y="0" width="1907" height="1083"/>
+	<SubTexture name="background0003" x="5913" y="0" width="1907" height="1083"/>
+	<SubTexture name="background0004" x="0" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0005" x="1971" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0006" x="3942" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0007" x="5913" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0008" x="0" y="2294" width="1907" height="1083"/>
+	<SubTexture name="background0009" x="1971" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0010" x="3942" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0011" x="5913" y="1147" width="1907" height="1083"/>
+	<SubTexture name="background0012" x="0" y="2294" width="1907" height="1083"/>
+</TextureAtlas>
