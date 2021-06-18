@@ -45,11 +45,6 @@ class FreeplayState extends MusicBeatState
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
-		// secret song idk
-		if (FlxG.save.data.piss != null)
-			if (FlxG.save.data.piss)
-				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
-
 		/* 
 			if (FlxG.sound.music != null)
 			{
@@ -81,7 +76,7 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false, true);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
@@ -100,8 +95,8 @@ class FreeplayState extends MusicBeatState
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		// scoreText.autoSize = false;
-		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, LEFT);
-		scoreText.alignment = LEFT;
+		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		// scoreText.alignment = RIGHT;
 
 		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
@@ -154,7 +149,7 @@ class FreeplayState extends MusicBeatState
 	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
 	{
 		if (songCharacters == null)
-			songCharacters = ['bf'];
+			songCharacters = ['dad'];
 
 		var num:Int = 0;
 		for (song in songs)

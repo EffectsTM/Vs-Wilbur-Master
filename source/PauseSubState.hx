@@ -1,6 +1,7 @@
 package;
 
-#if cpp
+import openfl.Lib;
+#if windows
 import llua.Lua;
 #end
 import Controls.Control;
@@ -181,14 +182,23 @@ class PauseSubState extends MusicBeatSubstate
 				case "Restart Song":
 					FlxG.resetState();
 				case "Exit to menu":
-					PlayState.loadRep = false;
-					#if cpp
-					if (PlayState.lua != null)
+					if(PlayState.loadRep)
 					{
-						Lua.close(PlayState.lua);
-						PlayState.lua = null;
+						FlxG.save.data.botplay = false;
+						FlxG.save.data.scrollSpeed = 1;
+						FlxG.save.data.downscroll = false;
+					}
+					PlayState.loadRep = false;
+					#if windows
+					if (PlayState.luaModchart != null)
+					{
+						PlayState.luaModchart.die();
+						PlayState.luaModchart = null;
 					}
 					#end
+					if (FlxG.save.data.fpsCap > 290)
+						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
+					
 					FlxG.switchState(new MainMenuState());
 			}
 		}
