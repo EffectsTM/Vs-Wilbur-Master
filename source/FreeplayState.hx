@@ -45,13 +45,10 @@ class FreeplayState extends MusicBeatState
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
-		/* 
-			if (FlxG.sound.music != null)
-			{
-				if (!FlxG.sound.music.playing)
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
-			}
-		 */
+		// secret song idk
+		if (FlxG.save.data.piss != null)
+			if (FlxG.save.data.piss)
+				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
 
 		 #if windows
 		 // Updating Discord Rich Presence

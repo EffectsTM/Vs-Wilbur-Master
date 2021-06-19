@@ -441,7 +441,7 @@ class PlayState extends MusicBeatState
 		switch (SONG.song.toLowerCase())
 		{
 			case 'rifting':
-				gfVersion = 'gf_dark';
+				gfVersion = 'gf-dark';
 		}
 
 
@@ -454,7 +454,7 @@ class PlayState extends MusicBeatState
 				gf.setPosition(100, -130);
 			case 'gf':
 				gf.setPosition(250, 150);
-			case 'gf_dark':
+			case 'gf-dark':
 				gf.setPosition(250, 150);
 		}
 
@@ -2012,6 +2012,9 @@ var startTimer:FlxTimer;
 
 	function endSong():Void
 	{
+		// Doing this because uhhhhhhhhhhhhh
+		FlxG.save.data.piss = true;
+		
 		if (!loadRep)
 			rep.SaveReplay(saveNotes);
 		else

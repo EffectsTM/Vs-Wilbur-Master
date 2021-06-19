@@ -62,7 +62,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'gf_dark':
+			case 'gf-dark':
 				// GIRLFRIEND CODE
 				tex = Paths.getSparrowAtlas('GF_assets_dark');
 				frames = tex;
@@ -215,7 +215,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
-			case 'bf_dark':
+			case 'bf-dark':
 				var tex = Paths.getSparrowAtlas('BOYFRIEND_dark','shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
@@ -302,7 +302,7 @@ class Character extends FlxSprite
 
 		switch (curCharacter)
 		{
-			case 'gf':
+			case 'gf', 'gf-dark':
 				if (animation.curAnim.name == 'hairFall' && animation.curAnim.finished)
 					playAnim('danceRight');
 		}
@@ -321,7 +321,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf':
+				case 'gf', 'gf-dark':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
