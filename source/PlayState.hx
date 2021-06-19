@@ -2011,10 +2011,7 @@ var startTimer:FlxTimer;
 	}
 
 	function endSong():Void
-	{
-		// Doing this because uhhhhhhhhhhhhh
-		FlxG.save.data.piss = true;
-		
+	{		
 		if (!loadRep)
 			rep.SaveReplay(saveNotes);
 		else
@@ -2067,7 +2064,10 @@ var startTimer:FlxTimer;
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
 
-					FlxG.switchState(new StoryMenuState());
+					// Doing this because uhhhhhhhhhhhhh
+					FlxG.save.data.piss = true;
+
+					FlxG.switchState(new HoorayState());
 
 					#if windows
 					if (luaModchart != null)

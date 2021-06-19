@@ -3,9 +3,9 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import flixel.addons.transition.FlxTransitionableState;
 
 class HoorayState extends FlxTransitionableState
 {
@@ -60,7 +60,7 @@ class HoorayState extends FlxTransitionableState
 
         if (FlxG.keys.justPressed.ENTER)
         {
-            FlxG.switchState(new MainMenuState());
+            FlxG.switchState(new CreditsState());
         }
     }
 }
