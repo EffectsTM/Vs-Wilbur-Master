@@ -22,7 +22,7 @@ class HoorayState extends FlxTransitionableState
 		faded = new FlxSprite(0, -160);
 		faded.frames = Paths.getSparrowAtlas('endscreenlol');
 		faded.antialiasing = true;
-		faded.animation.addByPrefix('impostor', 'background', 24);
+		faded.animation.addByPrefix('impostor', 'background', 12);
 		faded.animation.play('impostor');
 		faded.updateHitbox();
         faded.screenCenter(X);
