@@ -38,7 +38,7 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		super();
 
-		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
+		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFF95CCCF);
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
 		add(bgFade);
@@ -57,9 +57,10 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'maybe-i-was-boring', 'in-love-with-egirl', 'internet-ruined', 'rifting':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
+				box.frames = Paths.getSparrowAtlas('windowbox', 'shared');
+				box.animation.addByPrefix('normalOpen', 'dialog  instance', 20, false);
+				box.animation.addByIndices('normal', 'dialog  window', [4], "", 24);
+				box.antialiasing = true;
 				box.width = 200;
 				box.height = 200;
 				box.x = -100;
@@ -73,21 +74,25 @@ class DialogueBox extends FlxSpriteGroup
 
 		// Hacky solution to two Wilbur expressions
 		
-		portraitLeft = new FlxSprite(-1500, 50);
-		portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburPortrait', 'shared');
-		portraitLeft.animation.addByPrefix('enter', 'wilbur portrait enter instance 1', 24, false);
+		portraitLeft = new FlxSprite(400, 100);
+		portraitLeft.frames = Paths.getSparrowAtlas('portraits/wilburdialog', 'shared');
+		portraitLeft.animation.addByPrefix('enter', 'body diaicon instance', 24, false);
 		portraitLeft.updateHitbox();
 		portraitLeft.scrollFactor.set();
-		portraitLeft.flipX = true;
+		portraitLeft.flipX = false;
+		portraitLeft.scale.x = 1.2;
+		portraitLeft.scale.y = 1.2;
 		portraitLeft.antialiasing = true;
 		add(portraitLeft);
 		portraitLeft.visible = false;
 
-		portraitRight = new FlxSprite(-1500, 50);
-		portraitRight.frames = Paths.getSparrowAtlas('portraits/bfPortrait', 'shared');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
+		portraitRight = new FlxSprite(400, 100);
+		portraitRight.frames = Paths.getSparrowAtlas('portraits/wilburdialog_MAD', 'shared');
+		portraitRight.animation.addByPrefix('enter', 'body diaicon mad instance', 24, false);
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
+		portraitRight.scale.x = 1.2;
+		portraitRight.scale.y = 1.2;
 		portraitRight.antialiasing = true;
 		add(portraitRight);
 		portraitRight.visible = false;
@@ -104,12 +109,12 @@ class DialogueBox extends FlxSpriteGroup
 		//add(handSelect);
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
+		dropText.font = 'Snowy Night';
 		dropText.color = 0x00000000;
 		add(dropText);
 
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
-		swagDialogue.font = 'Pixel Arial 11 Bold';
+		swagDialogue.font = 'Snowy Night';
 		swagDialogue.color = 0x363636;
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('wilburText'), 0.6)];
 		add(swagDialogue);

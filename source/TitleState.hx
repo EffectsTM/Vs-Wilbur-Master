@@ -157,7 +157,7 @@ class TitleState extends MusicBeatState
 
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
-
+		
 		bg = new FlxSprite().loadGraphic(Paths.image('colorBGTitle'));
 		bg.antialiasing = true;
 		add(bg);
