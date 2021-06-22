@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="boyfrienddialog.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="body diacon bf normal instance 10000" x="0" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10001" x="0" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10002" x="576" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10003" x="576" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10004" x="1152" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10005" x="1152" y="0" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10006" x="0" y="277" width="512" height="213"/>
+	<SubTexture name="body diacon bf normal instance 10007" x="0" y="277" width="512" height="213"/>
+</TextureAtlas>

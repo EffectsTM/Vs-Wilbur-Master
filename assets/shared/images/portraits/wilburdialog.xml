@@ -2,12 +2,12 @@
 <TextureAtlas imagePath="wilburdialog.png">
 	<!-- Created with Adobe Animate version 20.5.1.31044 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="body diaicon instance 10000" x="0" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10001" x="0" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10002" x="314" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10003" x="314" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10004" x="628" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10005" x="628" y="0" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10006" x="0" y="365" width="250" height="301"/>
-	<SubTexture name="body diaicon instance 10007" x="0" y="365" width="250" height="301"/>
+	<SubTexture name="body diaicon instance 10000" x="0" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10001" x="0" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10002" x="569" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10003" x="569" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10004" x="1138" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10005" x="1138" y="0" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10006" x="0" y="365" width="505" height="301"/>
+	<SubTexture name="body diaicon instance 10007" x="0" y="365" width="505" height="301"/>
 </TextureAtlas>
