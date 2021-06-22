@@ -2955,7 +2955,7 @@ var startTimer:FlxTimer;
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
 		}
-
+	
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
 		{
 			FlxG.camera.zoom += 0.015;
@@ -2982,12 +2982,16 @@ var startTimer:FlxTimer;
 		{
 			dad.dance();
 		}
-
-		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
+		
+		if (curSong.toLowerCase() == 'unfinished-symphony')
 		{
-			boyfriend.playAnim('hey', true);
+			switch (curBeat)
+			{
+				case 35, 71, 139, 172:
+				boyfriend.playAnim('hey');
+			}
 		}
-
+		
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
 				boyfriend.playAnim('hey', true);
