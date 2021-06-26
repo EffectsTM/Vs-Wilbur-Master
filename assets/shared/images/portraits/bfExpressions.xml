@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bfExpressions.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bf shocked 00" x="1496" y="0" width="296" height="218" frameX="-3" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 01" x="1123" y="274" width="296" height="218" frameX="-3" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 02" x="750" y="275" width="299" height="214" frameX="-1" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 03" x="0" y="277" width="299" height="214" frameX="-1" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 04" x="363" y="277" width="301" height="211" frameX="0" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 05" x="1483" y="282" width="301" height="211" frameX="0" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 06" x="363" y="277" width="301" height="211" frameX="0" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf shocked 07" x="1483" y="282" width="301" height="211" frameX="0" frameY="0" frameWidth="301" frameHeight="218"/>
+	<SubTexture name="bf normal 00" x="1123" y="0" width="309" height="210" frameX="0" frameY="-3" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 01" x="1123" y="0" width="309" height="210" frameX="0" frameY="-3" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 02" x="750" y="0" width="309" height="211" frameX="-1" frameY="-2" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 03" x="750" y="0" width="309" height="211" frameX="-1" frameY="-2" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 04" x="0" y="0" width="311" height="213" frameX="-2" frameY="0" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 05" x="0" y="0" width="311" height="213" frameX="-2" frameY="0" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 06" x="375" y="0" width="311" height="213" frameX="-2" frameY="0" frameWidth="313" frameHeight="213"/>
+	<SubTexture name="bf normal 07" x="375" y="0" width="311" height="213" frameX="-2" frameY="0" frameWidth="313" frameHeight="213"/>
+</TextureAtlas>

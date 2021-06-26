@@ -1,7 +1,7 @@
-:bf: What do you mean, 'Were okay together' 
-:bf: Little man, you are the problem here, not me.
-:bf: I'm trying to help this lady out.
-:bf: So I hope you dont think I will go..
-:dad: 'Yup this relationship is so healthy right now.'
-:bf: There has to be something wrong...
-:bf: Right?
+wilbur:mad:What do you mean, 'Were okay together' 
+wilbur:mad:Little man, you are the problem here, not me.
+wilbur:mad:I'm trying to help this lady out.
+wilbur:mad:So I hope you dont think I will go..
+wilbur:normal:'Yup this relationship is so healthy right now.'
+wilbur:mad:There has to be something wrong...
+wilbur:mad:Right?

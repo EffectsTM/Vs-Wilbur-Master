@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="wilburExpressions.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="wilbur guitar 00" x="0" y="0" width="249" height="287" frameX="0" frameY="-8" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 01" x="0" y="0" width="249" height="287" frameX="0" frameY="-8" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 02" x="621" y="0" width="244" height="291" frameX="-2" frameY="-3" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 03" x="621" y="0" width="244" height="291" frameX="-2" frameY="-3" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 04" x="929" y="0" width="241" height="293" frameX="-3" frameY="0" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 05" x="929" y="0" width="241" height="293" frameX="-3" frameY="0" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 06" x="313" y="0" width="244" height="292" frameX="-2" frameY="-3" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur guitar 07" x="313" y="0" width="244" height="292" frameX="-2" frameY="-3" frameWidth="249" frameHeight="295"/>
+	<SubTexture name="wilbur normal 00" x="0" y="351" width="241" height="288" frameX="0" frameY="-8" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 01" x="0" y="351" width="241" height="288" frameX="0" frameY="-8" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 02" x="1234" y="352" width="237" height="292" frameX="-2" frameY="-3" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 03" x="1234" y="352" width="237" height="292" frameX="-2" frameY="-3" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 04" x="1535" y="357" width="233" height="294" frameX="-4" frameY="0" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 05" x="1535" y="357" width="233" height="294" frameX="-4" frameY="0" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 06" x="1540" y="0" width="237" height="293" frameX="-2" frameY="-3" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur normal 07" x="1540" y="0" width="237" height="293" frameX="-2" frameY="-3" frameWidth="241" frameHeight="296"/>
+	<SubTexture name="wilbur mad 00" x="1234" y="0" width="242" height="288" frameX="0" frameY="-8" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 01" x="1234" y="0" width="242" height="288" frameX="0" frameY="-8" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 02" x="305" y="356" width="236" height="292" frameX="-3" frameY="-3" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 03" x="305" y="356" width="236" height="292" frameX="-3" frameY="-3" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 04" x="921" y="357" width="234" height="294" frameX="-4" frameY="0" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 05" x="921" y="357" width="234" height="294" frameX="-4" frameY="0" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 06" x="621" y="355" width="236" height="293" frameX="-3" frameY="-3" frameWidth="242" frameHeight="296"/>
+	<SubTexture name="wilbur mad 07" x="621" y="355" width="236" height="293" frameX="-3" frameY="-3" frameWidth="242" frameHeight="296"/>
+</TextureAtlas>

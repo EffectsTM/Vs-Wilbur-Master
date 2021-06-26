@@ -1,11 +1,11 @@
-:bf: You know what man.
-:bf: I just realized something.
-:dad: Maybe I am the problem.
-:dad: You know?
-:dad: I mean, you really sang for her.
-:dad: Looks like you really care.
-:bf: If you beat me one more time though...
-:bf: There might be some problems...
-:dad: Haha, just joking, we can sing with me again if you want.
-:dad: Huh? you want too? 
-:dad: Of course, lets go little man.
+wilbur:mad:You know what man.
+wilbur:mad:I just realized something.
+wilbur:normal:Maybe I am the problem.
+wilbur:normal:You know?
+wilbur:normal:I mean, you really sang for her.
+wilbur:normal:Looks like you really care.
+wilbur:mad:If you beat me one more time though...
+wilbur:mad:There might be some problems...
+wilbur:normal:Haha, just joking, we can sing with me again if you want.
+wilbur:normal:Huh? you want too? 
+wilbur:normal:Of course, lets go little man.

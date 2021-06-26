@@ -2,35 +2,17 @@
 <TextureAtlas imagePath="windowbox.png">
 	<!-- Created with Adobe Animate version 20.5.1.31044 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="dialog  instance 10000" x="0" y="0" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10001" x="765" y="0" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10002" x="0" y="277" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10003" x="765" y="277" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10004" x="765" y="277" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10005" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10006" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10007" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10008" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10009" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10010" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10011" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10012" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10013" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10014" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10015" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10016" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10017" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10018" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10019" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10020" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10021" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10022" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10023" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10024" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  instance 10025" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  window 10000" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  window 10001" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  window 10002" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  window 10003" x="0" y="554" width="701" height="213"/>
-	<SubTexture name="dialog  window 10004" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10000" x="0" y="0" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10001" x="765" y="0" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10002" x="0" y="277" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10003" x="765" y="277" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10004" x="765" y="277" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10005" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10006" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialoginstance 10007" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialogwindow 10000" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialogwindow 10001" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialogwindow 10002" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialogwindow 10003" x="0" y="554" width="701" height="213"/>
+	<SubTexture name="dialogwindow 10004" x="0" y="554" width="701" height="213"/>
 </TextureAtlas>
