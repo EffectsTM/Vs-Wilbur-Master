@@ -1,7 +1,8 @@
-wilbur:mad:What do you mean, 'Were okay together' 
-wilbur:mad:Little man, you are the problem here, not me.
-wilbur:mad:I'm trying to help this lady out.
-wilbur:mad:So I hope you dont think I will go..
-wilbur:normal:'Yup this relationship is so healthy right now.'
-wilbur:mad:There has to be something wrong...
-wilbur:mad:Right?
+bf:normal:Beep bop beep!
+wilbur:mad:What do you mean, 'We're okay together'?
+wilbur:mad:Little man.
+wilbur:mad:You are the problem here, not me.
+bf:normal:bop?!
+wilbur:mad:Have you not realized it?
+wilbur:mad:There has to be something bad about your relationship.
+wilbur:mad:Right..?

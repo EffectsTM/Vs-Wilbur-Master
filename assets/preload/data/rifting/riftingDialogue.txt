@@ -1,12 +1,13 @@
-wilbur:normal:Huh, how do you like that?
-wilbur:normal:I was gonna play some songs out on the brige when I originally got here.
-wilbur:normal:But our little singing lesson got in the way, didn't it?
-wilbur:normal:So before I go, how about we go one more time.
-wilbur:normal:Yeah! it looks like you are excited little guy.
-wilbur:normal:It also looks some people heard the music!
-wilbur:normal:So lets do this!
-wilbur:normal:Hit the music... uh,
-wilbur:normal:What's your name ma'm?
-wilbur:normal:...
-wilbur:normal:Oh?
-wilbur:normal:Hit the music.. uh.. girlfriend?
+wilbur:gutiar:Huh, how do you like that?
+wilbur:gutiar:I was gonna play some songs out on the brige when I originally got here.
+wilbur:gutiar:But our little singing lesson got in the way, didn't it?
+wilbur:gutiar:So before I go, how about we go one more time?
+bf:normal:beep bop pob be!!!
+wilbur:gutiar:Yeah! it looks like you are excited little guy.
+wilbur:gutiar:It also looks some people heard the music!
+wilbur:gutiar:So let's do this!
+wilbur:gutiar:Hit the music... uh,
+wilbur:gutiar:What's your name ma'am?
+bf:normal:beep bop boop.
+wilbur:gutiar:Oh? Okay..
+wilbur:gutiar:Hit the music.. uh.. girlfriend?

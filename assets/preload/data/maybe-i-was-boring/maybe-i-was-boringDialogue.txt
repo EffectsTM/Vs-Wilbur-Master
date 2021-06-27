@@ -1,15 +1,18 @@
-wilbur:normal:Hello ma'am!
-wilbur:normal:You seem pretty nice out here.
-wilbur:normal:But I have seen that you are talking to this little man here.
-wilbur:normal:Are you sure you okay with this little guy ma'am?
-wilbur:normal:I can see that you are uncomfortable.
-wilbur:normal:Maybe there is a problem with you two, is that it?
-wilbur:normal:We could go back to my house and fix your relationship?
+wilbur:normal:Hello Ma'am!
+wilbur:normal:Today seems nice, wouldn't you agree?
+wilbur:normal:Uh, so, are you single?
+wilbur:normal:I see you have this little man here.
+wilbur:normal:But, personally, I see him as a jackass.
+bf:shocked:Beep?!?
 wilbur:mad:...
-wilbur:mad:So you are like that huh?
-wilbur:mad:Why doesn't anyone respect me.
-wilbur:mad:Im such a nice guy, and you treat me like shit?!
-wilbur:mad:You only date douchebags? 
-wilbur:mad:But you never talk to a nice guy like me? Its unfair.
-wilbur:mad:What I am about to do will surely win your heart.
-bf:normal:beep boop bap bop (lmao try me bitch)
+wilbur:mad:Of course, you only see me as a asshole.
+wilbur:mad:Women never date nice guys like me.
+wilbur:mad:I just wanted to have a nice chat, but of course...
+bf:normal:Beep!
+wilbur:Eh?
+wilbur:mad:What... you want to have a rap battle?
+wilbur:mad:You want to prove your love or something, right? Haha.
+bf:normal:Beep bop!
+wilbur:mad:What, you're serious?
+wilbur:mad:I guess.. I do have a lot of musical talent.
+wilbur:mad:Get ready to be beaten, little man.

@@ -305,7 +305,7 @@ class TitleState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				// removed version check lolollollolll
-				FlxG.switchState(new MainMenuState());
+				FlxG.switchState(new WarningSubState());
 			});
 		}
 

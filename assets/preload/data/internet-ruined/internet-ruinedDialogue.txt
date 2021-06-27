@@ -1,11 +1,13 @@
 wilbur:mad:You know what man.
+bf:normal:beep?
 wilbur:mad:I just realized something.
 wilbur:normal:Maybe I am the problem.
-wilbur:normal:You know?
 wilbur:normal:I mean, you really sang for her.
 wilbur:normal:Looks like you really care.
 wilbur:mad:If you beat me one more time though...
-wilbur:mad:There might be some problems...
-wilbur:normal:Haha, just joking, we can sing with me again if you want.
+wilbur:mad:We might be some problems...
+bf:shocked:bop?!?
+wilbur:normal:Haha, just joking, we can sing again if you want.
+bf:normal:beep po bop!
 wilbur:normal:Huh? you want too? 
 wilbur:normal:Of course, lets go little man.
