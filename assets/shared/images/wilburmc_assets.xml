@@ -2,147 +2,105 @@
 <TextureAtlas imagePath="wilburmc_assets.png">
 	<!-- Created with Adobe Animate version 20.5.1.31044 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="wilbur mc down sprite instance 10000" x="0" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10001" x="0" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10002" x="642" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10003" x="642" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10004" x="1284" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10005" x="1284" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10006" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10007" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10008" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10009" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10010" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10011" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10012" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10013" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10014" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10015" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10016" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10017" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10018" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10019" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10020" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10021" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10022" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10023" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10024" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10025" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10026" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10027" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10028" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10029" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc down sprite instance 10030" x="1926" y="0" width="642" height="684"/>
-	<SubTexture name="wilbur mc idle instance 10000" x="2568" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10001" x="2568" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10002" x="2568" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10003" x="3210" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10004" x="3210" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10005" x="3210" y="0" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10006" x="0" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10007" x="0" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10008" x="642" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10009" x="1284" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10010" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10011" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10012" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10013" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10014" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10015" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10016" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10017" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10018" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10019" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10020" x="1926" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10021" x="2568" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10022" x="2568" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10023" x="3210" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc idle instance 10024" x="3210" y="691" width="642" height="691"/>
-	<SubTexture name="wilbur mc left instance 10000" x="0" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10001" x="0" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10002" x="642" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10003" x="642" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10004" x="1284" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10005" x="1284" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10006" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10007" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10008" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10009" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10010" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10011" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10012" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10013" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10014" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10015" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10016" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10017" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10018" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10019" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10020" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10021" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10022" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10023" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10024" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10025" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10026" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc left instance 10027" x="1926" y="1382" width="642" height="706"/>
-	<SubTexture name="wilbur mc right instance 10000" x="2568" y="1382" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10001" x="2568" y="1382" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10002" x="3213" y="1382" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10003" x="3213" y="1382" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10004" x="0" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10005" x="0" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10006" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10007" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10008" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10009" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10010" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10011" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10012" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10013" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10014" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10015" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10016" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10017" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10018" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10019" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10020" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10021" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10022" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10023" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10024" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10025" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10026" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc right instance 10027" x="645" y="2090" width="645" height="708"/>
-	<SubTexture name="wilbur mc up sprite instance 10000" x="1290" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10001" x="1290" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10002" x="1932" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10003" x="1932" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10004" x="2574" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10005" x="2574" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10006" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10007" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10008" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10009" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10010" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10011" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10012" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10013" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10014" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10015" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10016" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10017" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10018" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10019" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10020" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10021" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10022" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10023" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10024" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10025" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10026" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10027" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10028" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10029" x="3216" y="2090" width="642" height="699"/>
-	<SubTexture name="wilbur mc up sprite instance 10030" x="3216" y="2090" width="642" height="699"/>
+	<SubTexture name="wilbur mc idle instance 10000" x="0" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10001" x="0" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10002" x="656" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10003" x="656" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10004" x="1312" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10005" x="1312" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10006" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10007" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10008" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10009" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10010" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10011" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10012" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10013" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10014" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10015" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10016" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10017" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10018" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10019" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10020" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10021" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10022" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10023" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc idle instance 10024" x="1968" y="0" width="592" height="591"/>
+	<SubTexture name="wilbur mc left instance 10000" x="2624" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10001" x="2624" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10002" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10003" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10004" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10005" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10006" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10007" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10008" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10009" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10010" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10011" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10012" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10013" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10014" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10015" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10016" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10017" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc left instance 10018" x="3280" y="0" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10000" x="0" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10001" x="0" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10002" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10003" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10004" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10005" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10006" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10007" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10008" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10009" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10010" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10011" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10012" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10013" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10014" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10015" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10016" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10017" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc down sprite instance 10018" x="656" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc right instance 10000" x="1312" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10001" x="1312" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10002" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10003" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10004" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10005" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10006" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10007" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10008" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10009" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10010" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10011" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10012" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10013" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10014" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10015" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10016" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10017" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc right instance 10018" x="1967" y="656" width="591" height="591"/>
+	<SubTexture name="wilbur mc up sprite instance 10000" x="2622" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10001" x="2622" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10002" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10003" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10004" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10005" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10006" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10007" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10008" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10009" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10010" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10011" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10012" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10013" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10014" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10015" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10016" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10017" x="3278" y="656" width="592" height="592"/>
+	<SubTexture name="wilbur mc up sprite instance 10018" x="3278" y="656" width="592" height="592"/>
 </TextureAtlas>

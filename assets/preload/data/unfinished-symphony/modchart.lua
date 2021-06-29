@@ -16,7 +16,7 @@ function beatHit (beat)
 end
 
 function stepHit (step)
-		tweenCameraZoom(0.9,(crochet * 1) / 50)
+		tweenCameraZoom(0.95,(crochet * 1) / 50)
 	end
 end
 

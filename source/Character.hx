@@ -62,8 +62,20 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
+			case 'bettervan':
+				// AMONG US 
+				tex = Paths.getSparrowAtlas('bettervan_assets');
+				frames = tex;
+				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				
+				addOffset('danceLeft', 0, -9);
+				addOffset('danceRight', 0, -9);
+
+				playAnim('danceRight');
+
 			case 'gf-dark':
-				// GIRLFRIEND CODE
+				//  IMPOSTOR
 				tex = Paths.getSparrowAtlas('GF_assets_dark');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
@@ -302,7 +314,7 @@ class Character extends FlxSprite
 
 		switch (curCharacter)
 		{
-			case 'gf', 'gf-dark':
+			case 'gf', 'gf-dark', 'bettervan':
 				if (animation.curAnim.name == 'hairFall' && animation.curAnim.finished)
 					playAnim('danceRight');
 		}
@@ -321,7 +333,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf', 'gf-dark':
+				case 'gf', 'gf-dark', 'bettervan':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
