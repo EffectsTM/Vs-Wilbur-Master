@@ -9,5 +9,5 @@ wilbur:guitar:So let's do this!
 wilbur:guitar:Hit the music... uh,
 wilbur:guitar:What's your name ma'am?
 bf:normal:beep bop boop.
-wilbur:guitar:Oh? Okay..
-wilbur:guitar:Hit the music.. uh.. girlfriend?
+wilbur:guitar:Oh? Okay...
+wilbur:guitar:Hit the music... uh... girlfriend?
