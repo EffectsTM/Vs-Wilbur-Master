@@ -1,0 +1,19 @@
+{
+    "song": {
+        "player2": "wilbur",
+        "player1": "bf",
+        "speed": 1,
+        "needsVoices": true,
+        "sectionLengths": [],
+        "song": "maybe-i-was-boring",
+        "notes": [{
+            "mustHitSection": false,
+            "typeOfSection": 0,
+            "lengthInSteps": 16,
+            "sectionNotes": []
+        }],
+        "bpm": 100,
+        "sections": 0,
+        "validScore": true
+    }
+}

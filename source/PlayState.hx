@@ -403,6 +403,22 @@ class PlayState extends MusicBeatState
 				bg.active = false;
 				bg.updateHitbox();
 				add(bg);
+			case 'jubilee-line', 'her-sister-was-right', 'saline-solution':
+				curStage = 'LondonEX';
+
+				defaultCamZoom = 0.90;
+
+				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image('BsideLondon/londonandsky'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(0.2, 0.2);
+				bg.active = false;
+				bg.setGraphicSize(Std.int(bg.width * 0.8));
+				bg.updateHitbox();
+				add(bg);
+
+				var sidewalk:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("BsideLondon/sidewalk"));
+				sidewalk.antialiasing = true;
+				add(sidewalk);
 
 			default:
 				defaultCamZoom = 0.9;
@@ -443,6 +459,13 @@ class PlayState extends MusicBeatState
 			case 'riffing':
 				gfVersion = 'gf-dark';
 		}
+		
+		switch (SONG.song.toLowerCase())
+		{
+			case 'jubilee-line', 'her-sister-was-right', 'saline-solution':
+				gfVersion = 'gfex';
+		}
+
 
 
 		gf = new Character(400, 130, gfVersion);
@@ -457,6 +480,8 @@ class PlayState extends MusicBeatState
 			case 'gf':
 				gf.setPosition(250, 150);
 			case 'gf-dark':
+				gf.setPosition(250, 150);
+			case 'gfex':
 				gf.setPosition(250, 150);
 		}
 

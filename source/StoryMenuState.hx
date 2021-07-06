@@ -24,7 +24,8 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Maybe-I-Was-Boring', 'In-Love-With-EGirl', 'Internet-Ruined', 'Riffing']
+		['Maybe-I-Was-Boring', 'In-Love-With-EGirl', 'Internet-Ruined', 'Riffing'],
+		['Jubilee-Line', 'Her-Sister-Was-Right', 'Saline-Solution']
 	];
 	var curDifficulty:Int = 1;
 
@@ -32,10 +33,12 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', ''],
+		['', 'bf', ''],
 	];
 
 	var weekNames:Array<String> = [
-		"Nice guy becomes even nicer."
+		"Nice guy becomes even nicer.",
+		"Wilbur BSides lolol"
 	];
 
 	var txtWeekTitle:FlxText;
