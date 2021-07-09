@@ -173,10 +173,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', "wilbur Pose Left", 24, false);
 
 				addOffset("idle");
-				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", -10, -60);
-				addOffset("singLEFT", 250, -20);
-				addOffset("singDOWN", 10, -70);
+				addOffset("singUP", 11, 70);
+				addOffset("singLEFT", 244, -17);
+				addOffset("singRIGHT", 11, -55);
+				addOffset("singDOWN", 34, -69);
 
 				playAnim('idle');
 			case 'wilburex':
@@ -191,10 +191,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', "wilbur Pose Left", 24, false);
 
 				addOffset("idle");
-				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", -10, -60);
-				addOffset("singLEFT", 250, -20);
-				addOffset("singDOWN", 10, -70);
+				addOffset("singUP", 11, 70);
+				addOffset("singLEFT", 244, -17);
+				addOffset("singRIGHT", 11, -55);
+				addOffset("singDOWN", 34, -69);
 
 				playAnim('idle');
 			case 'wilburhappy':
@@ -208,10 +208,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', "wilburhappy Pose Left", 24, false);
 
 				addOffset("idle");
-				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", 10, -60);
-				addOffset("singLEFT", 250, -23);
-				addOffset("singDOWN", 20, -160);
+				addOffset("singUP", 33, 69);
+				addOffset("singRIGHT", 33, -56);
+				addOffset("singLEFT", 238, -15);
+				addOffset("singDOWN", 52, -137);
 
 				playAnim('idle');
 			case "wilburmc":
