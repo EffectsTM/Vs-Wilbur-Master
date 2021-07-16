@@ -761,13 +761,27 @@ class PlayState extends MusicBeatState
 	}
 
 	// Start Wilbur dialogue
-	function wilburStartDialogue(withFade:Bool = true):Void
+	function startDialogue(withFade:Bool = true):Void
 	{
-		var startInstant:() -> Void = function()
+		function startInstant()
 		{
 			inCutscene = true;
 			add(doof);
+
+			doof.advanceDialogue = function(d:Array<String>)
+			{
+				if (d[0] == "bf")
+				{
+					switch (d[1])
+					{
+						case "shocked":
+							boyfriend.playAnim("hit");
+						case "normal":
+							boyfriend.playAnim("idle");
+					}
+				}
 		};
+		}
 
 		if (withFade)
 		{
@@ -793,6 +807,7 @@ class PlayState extends MusicBeatState
 		else
 			startInstant();
 	}
+	
 var startTimer:FlxTimer;
 	var perfectMode:Bool = false;
 
