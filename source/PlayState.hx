@@ -672,9 +672,9 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'maybe-i-was-boring':
-					wilburIntro();
+					wilburIntroOne();
 				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
-					wilburStartDialogue(false);
+					startDialogue(false);
 				default:
 					startCountdown();
 			}
@@ -695,7 +695,7 @@ class PlayState extends MusicBeatState
 	}
 
 	// Initialize Wibur intro
-	function wilburIntro()
+	function wilburIntroOne()
 	{
 		// delete normal wilbur first loololololol this is inefficient
 		dad.destroy();
@@ -710,52 +710,57 @@ class PlayState extends MusicBeatState
 		// hud go poof
 		camHUD.visible = false;
 
-		// tween cam zoom in
+		/* SEQUENCE */
 		FlxTween.tween(FlxG.camera, {zoom: 1.3}, 1.2, {ease: FlxEase.sineInOut});
 
-		for (time in sequenceTimes)
+		new FlxTimer().start(1.5, function(_:FlxTimer)
 		{
-			new FlxTimer().start(time, wilburIntroSequence);
-		}
-
-		FlxG.sound.play(Paths.sound("wilburCutsceneSound"));
-	}
-
-	// Wilbur intro timer callback
-	function wilburIntroSequence(timer:FlxTimer)
-	{
-		switch (sequenceIndex)
-		{
-			case 0:
 			camFollow.x = dad.getMidpoint().x + 100;
 			camFollow.y = dad.getMidpoint().y - 160;
 			FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
-			case 1:
+		});
+		new FlxTimer().start(1.9, function(_:FlxTimer)
+		{
 			dad.x = -120;
 			FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
 			dad.visible = true;
-			case 2:
+		});
+		new FlxTimer().start(2.7, function(_:FlxTimer)
+		{
 			dad.animation.play("hi");
-			case 3:
+		});
+		new FlxTimer().start(3.4, function(_:FlxTimer)
+		{
 			dad.animation.play("idle");
-			case 4:
+		});
+		new FlxTimer().start(4.0, function(_:FlxTimer)
+		{
 			boyfriend.animation.play("scared");
 			camFollow.x = boyfriend.getMidpoint().x - 100;
 			camFollow.y = boyfriend.getMidpoint().y - 100;
-			case 5:
+		});
+		new FlxTimer().start(6.6, function(_:FlxTimer)
+		{
 			dad.destroy();
 			dad = new Character(100, 100, SONG.player2);
 			add(dad);
 
 			FlxG.camera.zoom = defaultCamZoom;
+			
 			camFollow.x = dad.getMidpoint().x - 5;
 			camFollow.y = dad.getMidpoint().y - 5;
+			
 			FlxG.camera.focusOn(camFollow.getPosition());
+			
 			camHUD.visible = true;
-				wilburStartDialogue();
-		}
+			
+			boyfriend.playAnim("idle");
+			
+			startDialogue();
+		});
+		/* END SEQUENCE */
 
-		sequenceIndex++;
+		FlxG.sound.play(Paths.sound("wilburCutsceneSound"));
 	}
 
 	// Start Wilbur dialogue
