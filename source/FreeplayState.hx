@@ -12,7 +12,7 @@ import lime.utils.Assets;
 
 using StringTools;
 
-#if windows
+#if cpp
 import Discord.DiscordClient;
 #end
 
@@ -50,7 +50,7 @@ class FreeplayState extends MusicBeatState
 			if (FlxG.save.data.piss)
 				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
 
-		 #if windows
+		 #if cpp
 		 // Updating Discord Rich Presence
 		 DiscordClient.changePresence("In the Freeplay Menu", null);
 		 #end

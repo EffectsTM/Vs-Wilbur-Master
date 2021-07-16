@@ -16,7 +16,7 @@ import lime.app.Application;
 
 using StringTools;
 
-#if windows
+#if cpp
 import Discord.DiscordClient;
 #end
 
@@ -46,7 +46,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if windows
+		#if cpp
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
