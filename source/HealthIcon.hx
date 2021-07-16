@@ -17,11 +17,13 @@ class HealthIcon extends FlxSprite
 
 
 		animation.add('bf', [0, 1], 0, false, isPlayer);
+		animation.add('bfex', [30, 31], 0, false, isPlayer);
 		animation.add('bf-dark', [28, 1], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('wilbur', [24, 25], 0, false, isPlayer);
 		animation.add('wilburhappy', [26, 26], 0, false, isPlayer);
+		animation.add('wilburex', [32, 33], 0, false, isPlayer);
 		animation.add('wilburmc', [27, 27], 0, false, isPlayer);
 		animation.add('bf-old', [14, 15], 0, false, isPlayer);
 		animation.add('gf', [16], 0, false, isPlayer);

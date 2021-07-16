@@ -323,8 +323,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('maybe-i-was-boring/maybe-i-was-boringDialogue'));
 			case 'internet-ruined':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('internet-ruined/internet-ruinedDialogue'));
-			case 'rifting':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('rifting/riftingDialogue'));
+			case 'riffing':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('riffing/riftingDialogue'));
 			case 'in-love-with-egirl':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('in-love-with-egirl/in-love-with-egirlDialogue'));
 		}
@@ -348,7 +348,7 @@ class PlayState extends MusicBeatState
 				evilSnow.antialiasing = true;
 				add(evilSnow);
 
-			case 'rifting':
+			case 'riffing':
 				curStage = 'Londonnight';
 
 				defaultCamZoom = 0.90;
@@ -395,7 +395,7 @@ class PlayState extends MusicBeatState
 			case "unfinished-symphony":
 				curStage = 'Lmanburg';
 
-				defaultCamZoom = 0.90;
+				defaultCamZoom = 1.25;
 
 				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image("Lmanburg/lmanburgdeznuts", "shared"));
 				bg.antialiasing = true;
@@ -403,6 +403,22 @@ class PlayState extends MusicBeatState
 				bg.active = false;
 				bg.updateHitbox();
 				add(bg);
+			case 'jubilee-line', 'her-sister-was-right', 'saline-solution':
+				curStage = 'LondonEX';
+
+				defaultCamZoom = 0.90;
+
+				bg = new FlxSprite(-400, -500).loadGraphic(Paths.image('BsideLondon/londonandsky'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(0.2, 0.2);
+				bg.active = false;
+				bg.setGraphicSize(Std.int(bg.width * 0.8));
+				bg.updateHitbox();
+				add(bg);
+
+				var sidewalk:FlxSprite = new FlxSprite(-400, 700).loadGraphic(Paths.image("BsideLondon/sidewalk"));
+				sidewalk.antialiasing = true;
+				add(sidewalk);
 
 			default:
 				defaultCamZoom = 0.9;
@@ -435,14 +451,21 @@ class PlayState extends MusicBeatState
 		switch (curStage)
 		{
 			case 'Lmanburg':
-				gfVersion = 'gf-van';
+				gfVersion = 'bettervan';
 		}
 		
 		switch (SONG.song.toLowerCase())
 		{
-			case 'rifting':
+			case 'riffing':
 				gfVersion = 'gf-dark';
 		}
+		
+		switch (SONG.song.toLowerCase())
+		{
+			case 'jubilee-line', 'her-sister-was-right', 'saline-solution':
+				gfVersion = 'gfex';
+		}
+
 
 
 		gf = new Character(400, 130, gfVersion);
@@ -452,9 +475,13 @@ class PlayState extends MusicBeatState
 		{
 			case 'gf-van':
 				gf.setPosition(100, -130);
+			case 'bettervan':
+				gf.setPosition(100, -530);
 			case 'gf':
 				gf.setPosition(250, 150);
 			case 'gf-dark':
+				gf.setPosition(250, 150);
+			case 'gfex':
 				gf.setPosition(250, 150);
 		}
 
@@ -463,6 +490,14 @@ class PlayState extends MusicBeatState
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		
+		// REPOSITIONING PER STAGE
+		switch (curStage)
+		{
+			case 'Lmanburg':
+				boyfriend.y -= 0;
+				dad.y -= -120;		
+		}
 
 		add(gf);
 		add(dad);
@@ -640,7 +675,7 @@ class PlayState extends MusicBeatState
 			{
 				case 'maybe-i-was-boring':
 					wilburIntro();
-				case 'in-love-with-egirl', 'internet-ruined', 'rifting':
+				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
 					wilburStartDialogue(false);
 				default:
 					startCountdown();
