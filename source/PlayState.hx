@@ -311,14 +311,17 @@ class PlayState extends MusicBeatState
 
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
-
-		trace('INFORMATION ABOUT WHAT U PLAYIN WIT:\nFRAMES: ' + Conductor.safeFrames + '\nZONE: ' + Conductor.safeZoneOffset + '\nTS: ' + Conductor.timeScale + '\nBotPlay : ' + FlxG.save.data.botplay);
+		
+		trace("safeFrames: " + Conductor.safeFrames
+			+ "safeZoneOffset: " + Conductor.safeZoneOffset
+			+ "timeScale: " + Conductor.timeScale
+			+ "botplay: " + FlxG.save.data.botplay);
 	
 		//dialogue shit
 		switch (SONG.song.toLowerCase())
 		{
-			case 'maybe-i-was-boring':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('maybe-i-was-boring/maybe-i-was-boringDialogue'));
+			case 'losing':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('losing/losingDialogue'));
 			case 'internet-ruined':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('internet-ruined/internet-ruinedDialogue'));
 			case 'riffing':
@@ -329,7 +332,7 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song.toLowerCase())
 		{
-			case 'maybe-i-was-boring', 'in-love-with-egirl', 'internet-ruined':
+			case 'losing', 'in-love-with-egirl', 'internet-ruined':
 				curStage = 'London';
 
 				defaultCamZoom = 0.90;
@@ -671,8 +674,8 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
-				case 'maybe-i-was-boring':
-					wilburIntro();
+				case 'losing':
+					wilburIntroOne();
 				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
 					wilburStartDialogue(false);
 
@@ -1462,7 +1465,7 @@ class PlayState extends MusicBeatState
 			// 1 / 1000 chance for Gitaroo Man easter egg
 			if (FlxG.random.bool(0.1))
 			{
-				trace('GITAROO MAN EASTER EGG');
+				trace("how about no");
 				FlxG.switchState(new GitarooPause());
 			}
 			else
@@ -2119,6 +2122,7 @@ class PlayState extends MusicBeatState
 					transOut = FlxTransitionableState.defaultTransOut;
 
 					// Doing this because uhhhhhhhhhhhhh
+
 					FlxG.save.data.piss = true;
 
 					FlxG.switchState(new HoorayState());
@@ -2153,7 +2157,7 @@ class PlayState extends MusicBeatState
 					if (storyDifficulty == 2)
 						difficulty = '-hard';
 
-					trace('LOADING NEXT SONG');
+					trace("Incoming next song!");
 					trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
 					if (SONG.song.toLowerCase() == 'eggnog')
@@ -2179,7 +2183,6 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				trace('WENT BACK TO FREEPLAY??');
 				FlxG.switchState(new FreeplayState());
 			}
 		}
