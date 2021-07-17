@@ -677,7 +677,7 @@ class PlayState extends MusicBeatState
 				case 'losing':
 					wilburIntroOne();
 				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
-					wilburStartDialogue(false);
+					StartDialogue(false);
 
 				default:
 					startCountdown();
