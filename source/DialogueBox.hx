@@ -28,6 +28,7 @@ class DialogueBox extends FlxSpriteGroup
 
 	var dropText:FlxText;
 
+	public var advanceDialogue:Array<String> -> Void;
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
@@ -112,7 +113,6 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 42);
 		swagDialogue.font = 'W95FA';
 		swagDialogue.color = 0x363636;
-		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('wilburText'), 0.6)];
 		add(swagDialogue);
 
 		dialogue = new Alphabet(0, 80, "", false, true);
@@ -176,12 +176,6 @@ class DialogueBox extends FlxSpriteGroup
 	function startDialogue():Void
 	{
 		cleanDialog();
-		swagDialogue.resetText(curDialogue);
-		swagDialogue.start(0.04, true, false, null, function()
-		{
-			portraitLeft.animation.stop();
-			portraitRight.animation.stop();
-		});
 
 		switch (curCharacter)
 		{
@@ -191,13 +185,24 @@ class DialogueBox extends FlxSpriteGroup
 				portraitLeft.animation.play(curExpression, true);
 				if (!portraitLeft.visible)
 					portraitLeft.visible = true;
+
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('wilburText'), 0.6)];
 			case 'bf':
 				portraitLeft.visible = false;
 				
 				portraitRight.animation.play(curExpression, true);
 				if (!portraitRight.visible)
 					portraitRight.visible = true;
+
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('boyfriendText'), 0.6)];
 		}
+
+		swagDialogue.resetText(curDialogue);
+		swagDialogue.start(0.04, true, false, null, function()
+		{
+			portraitLeft.animation.stop();
+			portraitRight.animation.stop();
+		});
 	}
 
 	function cleanDialog():Void
@@ -208,5 +213,8 @@ class DialogueBox extends FlxSpriteGroup
 		curDialogue = splitDialogue[2];
 
 		trace(splitDialogue);
+
+		if (advanceDialogue != null)
+			advanceDialogue(splitDialogue);
 	}
 }

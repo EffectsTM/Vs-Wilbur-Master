@@ -1,17 +1,17 @@
 package;
 
-#if windows
+#if cpp
 import Discord.DiscordClient;
 #end
-import flixel.tweens.FlxTween;
-import flixel.util.FlxColor;
-import openfl.Lib;
 import Conductor.BPMChangeEvent;
 import flixel.FlxG;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.ui.FlxUIState;
 import flixel.math.FlxRect;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import openfl.Lib;
 
 class MusicBeatState extends FlxUIState
 {

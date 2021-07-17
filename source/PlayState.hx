@@ -54,10 +54,10 @@ import openfl.utils.AssetManifest;
 import openfl.utils.AssetType;
 
 using StringTools;
-#if windows
+#if cpp
 import Discord.DiscordClient;
 #end
-#if windows
+#if desktop
 import Sys;
 import sys.FileSystem;
 #end
@@ -92,7 +92,7 @@ class PlayState extends MusicBeatState
 	var songLength:Float = 0;
 	var kadeEngineWatermark:FlxText;
 	
-	#if windows
+	#if cpp
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
 	var iconRPC:String = "";
@@ -157,8 +157,6 @@ class PlayState extends MusicBeatState
 
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
-
-	var sequenceTimes:Array<Float> = [1.5, 1.9, 2.7, 3.4, 4.0, 6.60];
 
 	var bg:FlxSprite;
 	
@@ -252,7 +250,7 @@ class PlayState extends MusicBeatState
 
 		trace('Mod chart: ' + executeModchart + " - " + Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart"));
 
-		#if windows
+		#if cpp
 		// Making difficulty text for Discord Rich Presence.
 		switch (storyDifficulty)
 		{
@@ -677,6 +675,7 @@ class PlayState extends MusicBeatState
 					wilburIntro();
 				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
 					wilburStartDialogue(false);
+
 				default:
 					startCountdown();
 			}
@@ -697,7 +696,7 @@ class PlayState extends MusicBeatState
 	}
 
 	// Initialize Wibur intro
-	function wilburIntro()
+	function wilburIntroOne()
 	{
 		// delete normal wilbur first loololololol this is inefficient
 		dad.destroy();
@@ -712,62 +711,81 @@ class PlayState extends MusicBeatState
 		// hud go poof
 		camHUD.visible = false;
 
-		// tween cam zoom in
+		/* SEQUENCE */
 		FlxTween.tween(FlxG.camera, {zoom: 1.3}, 1.2, {ease: FlxEase.sineInOut});
 
-		for (time in sequenceTimes)
+		new FlxTimer().start(1.5, function(_:FlxTimer)
 		{
-			new FlxTimer().start(time, wilburIntroSequence);
-		}
+			camFollow.x = dad.getMidpoint().x + 100;
+			camFollow.y = dad.getMidpoint().y - 160;
+			FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
+		});
+		new FlxTimer().start(1.9, function(_:FlxTimer)
+		{
+			dad.x = -120;
+			FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
+			dad.visible = true;
+		});
+		new FlxTimer().start(2.7, function(_:FlxTimer)
+		{
+			dad.animation.play("hi");
+		});
+		new FlxTimer().start(3.4, function(_:FlxTimer)
+		{
+			dad.animation.play("idle");
+		});
+		new FlxTimer().start(4.0, function(_:FlxTimer)
+		{
+			boyfriend.animation.play("scared");
+			camFollow.x = boyfriend.getMidpoint().x - 100;
+			camFollow.y = boyfriend.getMidpoint().y - 100;
+		});
+		new FlxTimer().start(6.6, function(_:FlxTimer)
+		{
+			dad.destroy();
+			dad = new Character(100, 100, SONG.player2);
+			add(dad);
+
+			FlxG.camera.zoom = defaultCamZoom;
+			
+			camFollow.x = dad.getMidpoint().x - 5;
+			camFollow.y = dad.getMidpoint().y - 5;
+			
+			FlxG.camera.focusOn(camFollow.getPosition());
+			
+			camHUD.visible = true;
+			
+			boyfriend.playAnim("idle");
+			
+			startDialogue();
+		});
+		/* END SEQUENCE */
 
 		FlxG.sound.play(Paths.sound("wilburCutsceneSound"));
 	}
 
-	// Wilbur intro timer callback
-	function wilburIntroSequence(timer:FlxTimer)
-	{
-		switch (sequenceIndex)
-		{
-			case 0:
-				camFollow.x = dad.getMidpoint().x + 100;
-				camFollow.y = dad.getMidpoint().y - 160;
-				FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
-			case 1:
-				dad.x = -120;
-				FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
-				dad.visible = true;
-			case 2:
-				dad.animation.play("hi");
-			case 3:
-				dad.animation.play("idle");
-			case 4:
-				boyfriend.animation.play("scared");
-				camFollow.x = boyfriend.getMidpoint().x - 100;
-				camFollow.y = boyfriend.getMidpoint().y - 100;
-			case 5:
-				dad.destroy();
-				dad = new Character(100, 100, SONG.player2);
-				add(dad);
-
-				FlxG.camera.zoom = defaultCamZoom;
-				camFollow.x = dad.getMidpoint().x - 5;
-				camFollow.y = dad.getMidpoint().y - 5;
-				FlxG.camera.focusOn(camFollow.getPosition());
-				camHUD.visible = true;
-				wilburStartDialogue();
-		}
-
-		sequenceIndex++;
-	}
-
 	// Start Wilbur dialogue
-	function wilburStartDialogue(withFade:Bool = true):Void
+	function startDialogue(withFade:Bool = true):Void
 	{
-		var startInstant:() -> Void = function()
+		function startInstant()
 		{
 			inCutscene = true;
 			add(doof);
-		};
+
+			doof.advanceDialogue = function(d:Array<String>)
+			{
+				if (d[0] == "bf")
+				{
+					switch (d[1])
+					{
+						case "shocked":
+							boyfriend.playAnim("hit");
+						case "normal":
+							boyfriend.playAnim("idle");
+					}
+				}
+			};
+		}
 
 		if (withFade)
 		{
@@ -793,7 +811,8 @@ class PlayState extends MusicBeatState
 		else
 			startInstant();
 	}
-var startTimer:FlxTimer;
+	
+	var startTimer:FlxTimer;
 	var perfectMode:Bool = false;
 
 	var luaWiggles:Array<WiggleEffect> = [];
@@ -987,7 +1006,7 @@ var startTimer:FlxTimer;
 			default: allowedToHeadbang = false;
 		}
 		
-		#if windows
+		#if cpp
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText + " " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 		#end
@@ -1022,7 +1041,7 @@ var startTimer:FlxTimer;
 		var playerCounter:Int = 0;
 
 		// Per song offset check
-		#if windows
+		#if desktop
 			var songPath = 'assets/data/' + PlayState.SONG.song.toLowerCase() + '/';
 			for(file in sys.FileSystem.readDirectory(songPath))
 			{
@@ -1278,7 +1297,7 @@ var startTimer:FlxTimer;
 				vocals.pause();
 			}
 
-			#if windows
+			#if cpp
 			DiscordClient.changePresence("PAUSED on " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "Acc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 			#end
 			if (!startTimer.finished)
@@ -1301,7 +1320,7 @@ var startTimer:FlxTimer;
 				startTimer.active = true;
 			paused = false;
 
-			#if windows
+			#if cpp
 			if (startTimer.finished)
 			{
 				DiscordClient.changePresence(detailsText + " " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses, iconRPC, true, songLength - Conductor.songPosition);
@@ -1326,7 +1345,7 @@ var startTimer:FlxTimer;
 		vocals.time = Conductor.songPosition;
 		vocals.play();
 
-		#if windows
+		#if cpp
 		DiscordClient.changePresence(detailsText + " " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 		#end
 	}
@@ -1452,7 +1471,7 @@ var startTimer:FlxTimer;
 
 		if (FlxG.keys.justPressed.SEVEN)
 		{
-			#if windows
+			#if cpp
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
 			FlxG.switchState(new ChartingState());
@@ -1781,7 +1800,7 @@ var startTimer:FlxTimer;
 
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
-			#if windows
+			#if cpp
 			// Game Over doesn't get his own variable because it's only used here
 			DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 			#end
@@ -1803,7 +1822,7 @@ var startTimer:FlxTimer;
 		
 					openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		
-					#if windows
+					#if cpp
 					// Game Over doesn't get his own variable because it's only used here
 					DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 					#end
@@ -2930,7 +2949,7 @@ var startTimer:FlxTimer;
 		// yes this updates every step.
 		// yes this is bad
 		// but i'm doing it to update misses and accuracy
-		#if windows
+		#if cpp
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
 

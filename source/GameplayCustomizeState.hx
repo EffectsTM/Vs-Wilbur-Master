@@ -1,16 +1,16 @@
-import flixel.math.FlxMath;
 import flixel.FlxCamera;
-import flixel.math.FlxPoint;
+import flixel.FlxG;
 import flixel.FlxObject;
-#if windows
+import flixel.FlxSprite;
+import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.math.FlxMath;
+import flixel.math.FlxPoint;
+import openfl.ui.Keyboard;
+#if cpp
 import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 
-import flixel.group.FlxGroup.FlxTypedGroup;
-import openfl.ui.Keyboard;
-import flixel.FlxSprite;
-import flixel.FlxG;
 
 class GameplayCustomizeState extends MusicBeatState
 {
@@ -33,7 +33,7 @@ class GameplayCustomizeState extends MusicBeatState
     private var camHUD:FlxCamera;
     
     public override function create() {
-        #if windows
+        #if cpp
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Customizing Gameplay", null);
 		#end

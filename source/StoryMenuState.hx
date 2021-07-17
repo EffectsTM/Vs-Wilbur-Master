@@ -14,7 +14,7 @@ import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 
 using StringTools;
-#if windows
+#if cpp
 import Discord.DiscordClient;
 #end
 
@@ -59,7 +59,7 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if windows
+		#if cpp
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);
 		#end
