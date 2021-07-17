@@ -51,7 +51,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'maybe-i-was-boring', 'in-love-with-egirl', 'internet-ruined', 'riffing':
+			case 'losing', 'in-love-with-egirl', 'internet-ruined', 'riffing':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('windowbox', 'shared');
 				box.animation.addByPrefix('normalOpen', 'dialoginstance', 20, false);
