@@ -797,6 +797,8 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(FlxG.camera, {zoom: 1.2}, 2.8, {onComplete: function(_)
 				{
 					clearDaShit();
+					if (londonPeople != null)
+						add(londonPeople);
 				}
 				});
 
