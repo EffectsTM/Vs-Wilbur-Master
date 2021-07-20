@@ -35,6 +35,12 @@ class FreeplayState extends MusicBeatState
 
 	private var iconArray:Array<HealthIcon> = [];
 
+	override public function new()
+	{
+		super();
+		persistentUpdate = true;
+	}
+
 	override function create()
 	{
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
@@ -42,12 +48,14 @@ class FreeplayState extends MusicBeatState
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+			if (StoryMenuState.weekUnlocked != null)
+				if (StoryMenuState.weekUnlocked[Std.parseInt(data[2]) - 1])
+					songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
 		// secret song idk
-		if (FlxG.save.data.piss != null)
-			if (FlxG.save.data.piss)
+		if (StoryMenuState.weekUnlocked != null)
+			if (StoryMenuState.weekUnlocked[1])
 				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
 
 		 #if cpp
@@ -194,6 +202,7 @@ class FreeplayState extends MusicBeatState
 
 		if (controls.BACK)
 		{
+			persistentUpdate = false;
 			FlxG.switchState(new MainMenuState());
 		}
 

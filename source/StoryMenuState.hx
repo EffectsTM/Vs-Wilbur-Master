@@ -29,12 +29,8 @@ class StoryMenuState extends MusicBeatState
 	];
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
-
-	var weekCharacters:Array<Dynamic> = [
-		['', 'bf', ''],
-		['', 'bf', ''],
-	];
+	// default unlocking state
+	public static var weekUnlocked:Array<Bool> = [true, false];
 
 	var weekNames:Array<String> = [
 		"Nice guy becomes even nicer.",
@@ -48,7 +44,6 @@ class StoryMenuState extends MusicBeatState
 	var txtTracklist:FlxText;
 
 	var grpWeekText:FlxTypedGroup<MenuItem>;
-	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
 
@@ -56,6 +51,8 @@ class StoryMenuState extends MusicBeatState
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
+
+	var wilbur:FlxSprite;
 
 	override function create()
 	{
@@ -97,8 +94,6 @@ class StoryMenuState extends MusicBeatState
 		var blackBarThingie:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, 56, FlxColor.BLACK);
 		add(blackBarThingie);
 
-		grpWeekCharacters = new FlxTypedGroup<MenuCharacter>();
-
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
 
@@ -130,9 +125,16 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 96");
 
-		grpWeekCharacters.add(new MenuCharacter(0, 100, 0.5, false));
-		grpWeekCharacters.add(new MenuCharacter(450, 25, 0.9, true));
-		grpWeekCharacters.add(new MenuCharacter(850, 100, 0.5, true));
+		wilbur = new FlxSprite(450, 60);
+
+		wilbur.frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
+
+		wilbur.animation.addByPrefix('idle', "BF idle dance white", 24);
+		wilbur.animation.addByPrefix('confirm', 'BF HEY!!', 24, false);
+		wilbur.animation.play('idle');
+
+		wilbur.scale.x = 0.9;
+		wilbur.scale.y = 0.9;
 
 		difficultySelectors = new FlxGroup();
 		add(difficultySelectors);
@@ -166,7 +168,7 @@ class StoryMenuState extends MusicBeatState
 		trace("Line 150");
 
 		add(yellowBG);
-		add(grpWeekCharacters);
+		add(wilbur);
 
 		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
@@ -262,7 +264,7 @@ class StoryMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 
 				grpWeekText.members[curWeek].startFlashing();
-				grpWeekCharacters.members[1].animation.play('bfConfirm');
+				wilbur.animation.play('confirm');
 				stopspamming = true;
 			}
 
@@ -360,10 +362,6 @@ class StoryMenuState extends MusicBeatState
 
 	function updateText()
 	{
-		grpWeekCharacters.members[0].setCharacter(weekCharacters[curWeek][0]);
-		grpWeekCharacters.members[1].setCharacter(weekCharacters[curWeek][1]);
-		grpWeekCharacters.members[2].setCharacter(weekCharacters[curWeek][2]);
-
 		txtTracklist.text = "Tracks\n";
 		var stringThing:Array<String> = weekData[curWeek];
 

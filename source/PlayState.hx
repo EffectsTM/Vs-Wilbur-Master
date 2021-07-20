@@ -2211,10 +2211,6 @@ class PlayState extends MusicBeatState
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
 
-					// Doing this because uhhhhhhhhhhhhh
-
-					FlxG.save.data.piss = true;
-
 					FlxG.switchState(new HoorayState());
 
 					#if windows
@@ -2225,7 +2221,7 @@ class PlayState extends MusicBeatState
 					}
 					#end
 
-					// if ()
+					// Unlock da week
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 
 					if (SONG.validScore)

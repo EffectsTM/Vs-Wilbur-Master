@@ -100,16 +100,7 @@ class TitleState extends MusicBeatState
 
 		if (FlxG.save.data.weekUnlocked != null)
 		{
-			// FIX LATER!!!
-			// WEEK UNLOCK PROGRESSION!!
-			// StoryMenuState.weekUnlocked = FlxG.save.data.weekUnlocked;
-
-			if (StoryMenuState.weekUnlocked.length < 4)
-				StoryMenuState.weekUnlocked.insert(0, true);
-
-			// QUICK PATCH OOPS!
-			if (!StoryMenuState.weekUnlocked[0])
-				StoryMenuState.weekUnlocked[0] = true;
+			StoryMenuState.weekUnlocked = FlxG.save.data.weekUnlocked;
 		}
 		trace("Week unlocked");
 
@@ -305,7 +296,8 @@ class TitleState extends MusicBeatState
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
 				// removed version check lolollollolll
-				FlxG.switchState(new WarningSubState());
+				if (!WarningSubState.leftState)
+					FlxG.switchState(new WarningSubState());
 			});
 		}
 
