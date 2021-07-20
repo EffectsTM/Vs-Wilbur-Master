@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="wilbur_cutscene_2.png">
+	<!-- Created with Adobe Flash CS6 version 12.0.0.481 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="wilbur guitar one 0000" x="1412" y="4" width="360" height="727" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0001" x="1412" y="4" width="360" height="727" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0002" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0003" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0004" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0005" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0006" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0007" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0008" x="4" y="746" width="360" height="726" frameX="-5" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0009" x="364" y="746" width="367" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0010" x="364" y="746" width="367" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0011" x="731" y="746" width="373" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0012" x="731" y="746" width="373" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0013" x="1104" y="746" width="385" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0014" x="1104" y="746" width="385" height="726" frameX="0" frameY="-2" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0015" x="1489" y="746" width="379" height="727" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0016" x="1489" y="746" width="379" height="727" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0017" x="4" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0018" x="4" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0019" x="388" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0020" x="388" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0021" x="772" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0022" x="772" y="1473" width="384" height="726" frameX="0" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0023" x="1156" y="1473" width="376" height="726" frameX="-8" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0024" x="1156" y="1473" width="376" height="726" frameX="-8" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0025" x="1532" y="1473" width="365" height="726" frameX="-19" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0026" x="1532" y="1473" width="365" height="726" frameX="-19" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0027" x="4" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0028" x="4" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0029" x="342" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0030" x="342" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0031" x="680" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0032" x="680" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0033" x="1018" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0034" x="1018" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0035" x="1356" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar one 0036" x="1356" y="2199" width="338" height="726" frameX="-46" frameY="0" frameWidth="385" frameHeight="728"/>
+	<SubTexture name="wilbur guitar two 0000" x="1694" y="2199" width="320" height="726" frameX="-8" frameY="0" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0001" x="1694" y="2199" width="320" height="726" frameX="-8" frameY="0" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0002" x="4" y="2925" width="333" height="726" frameX="-3" frameY="0" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0003" x="4" y="2925" width="333" height="726" frameX="-3" frameY="0" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0004" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0005" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0006" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0007" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0008" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0009" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0010" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0011" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0012" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0013" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<SubTexture name="wilbur guitar two 0014" x="337" y="2925" width="351" height="725" frameX="0" frameY="-1" frameWidth="351" frameHeight="726"/>
+	<!-- <SubTexture name="wilbur guitar two 0015" x="4" y="4" width="350" height="708" frameX="0" frameY="-33" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0016" x="4" y="4" width="350" height="708" frameX="0" frameY="-33" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0017" x="4" y="4" width="350" height="708" frameX="0" frameY="-33" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0018" x="4" y="4" width="350" height="708" frameX="0" frameY="-33" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0019" x="354" y="4" width="350" height="711" frameX="0" frameY="-30" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0020" x="354" y="4" width="350" height="711" frameX="0" frameY="-30" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0021" x="704" y="4" width="350" height="714" frameX="0" frameY="-27" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0022" x="704" y="4" width="350" height="714" frameX="0" frameY="-27" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0023" x="1054" y="4" width="358" height="742" frameX="-7" frameY="0" frameWidth="365" frameHeight="742"/>
+	<SubTexture name="wilbur guitar two 0024" x="1054" y="4" width="358" height="742" frameX="-7" frameY="0" frameWidth="365" frameHeight="742"/> -->
+</TextureAtlas>

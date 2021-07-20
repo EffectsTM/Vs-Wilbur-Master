@@ -239,6 +239,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('hi', "wilbur saying hi", 24, false);
 
 				playAnim('idle');
+		case 'wilburcutscene2':
+				tex = Paths.getSparrowAtlas('wilbur_cutscene_2', 'shared');
+				frames = tex;
+
+				animation.addByPrefix('idle', "wilbur guitar one", 24, false);
+				animation.addByPrefix('tada', "wilbur guitar two", 24, false);
+
+				playAnim('idle');
 			case 'bf':
 				var tex = Paths.getSparrowAtlas('BOYFRIEND','shared');
 				frames = tex;
@@ -296,7 +304,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
 				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
 
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
+				animation.addByPrefix('dodge', 'boyfriend dodge', 24);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -417,7 +425,7 @@ class Character extends FlxSprite
 	/**
 	 * FOR GF DANCING SHIT
 	 */
-	public function dance()
+	public function dance(odd:Bool = false)
 	{
 		if (!debugMode)
 		{
@@ -426,12 +434,10 @@ class Character extends FlxSprite
 				case 'gf', 'gf-dark', 'bettervan', 'gfex':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
-						danced = !danced;
-
-						if (danced)
-							playAnim('danceRight');
-						else
+						if (odd)
 							playAnim('danceLeft');
+						else
+							playAnim('danceRight');
 					}
 				default:
 					playAnim('idle');

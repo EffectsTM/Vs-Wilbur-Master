@@ -392,7 +392,6 @@ class PlayState extends MusicBeatState
 				londonPeople = new FlxSprite(-480, 562).loadGraphic(Paths.image("LondonNight/people"));
 				londonPeople.scrollFactor.set(1.3, 1.3);
 				londonPeople.antialiasing = true;
-				add(londonPeople);
 
 			case "unfinished-symphony":
 				curStage = 'Lmanburg';
@@ -505,9 +504,8 @@ class PlayState extends MusicBeatState
 		add(dad);
 		add(boyfriend);
 
-		if (londonPeople != null)
+		if (londonPeople != null && !isStoryMode)
 		{
-			remove(londonPeople, true);
 			add(londonPeople);
 		}
 		
@@ -601,7 +599,7 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		healthBar.createFilledBar(0xFF008080, 0xFF31B0D1);
 		// healthBar
 		add(healthBar);
 
@@ -676,10 +674,12 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'losing':
-					wilburIntroOne();
-				case 'in-love-with-egirl', 'internet-ruined', 'riffing':
-					StartDialogue(false);
-
+					wilburIntro();
+				case 'in-love-with-egirl', 'internet-ruined':
+					startDialogue(false);
+				case 'riffing':
+					transOut = null;
+					wilburIntro(true);
 				default:
 					startCountdown();
 			}
@@ -699,73 +699,162 @@ class PlayState extends MusicBeatState
 		super.create();
 	}
 
-	// Initialize Wibur intro
-	function wilburIntroOne()
+	// Initialize Wibur intro  // epic typo moment, i aint fixing that
+	function wilburIntro(secondCutscene:Bool = false)
 	{
-		// delete normal wilbur first loololololol this is inefficient
-		dad.destroy();
-		dad = new Character(100, 100, "wilburcutscene");
-		dad.visible = false;
-		add(dad);
-
-		// center camera to bf
-		camFollow.x = boyfriend.getMidpoint().x - 100;
-		camFollow.y = boyfriend.getMidpoint().y - 100;
-
-		// hud go poof
-		camHUD.visible = false;
-
-		/* SEQUENCE */
-		FlxTween.tween(FlxG.camera, {zoom: 1.3}, 1.2, {ease: FlxEase.sineInOut});
-
-		new FlxTimer().start(1.5, function(_:FlxTimer)
-		{
-			camFollow.x = dad.getMidpoint().x + 100;
-			camFollow.y = dad.getMidpoint().y - 160;
-			FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
-		});
-		new FlxTimer().start(1.9, function(_:FlxTimer)
-		{
-			dad.x = -120;
-			FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
-			dad.visible = true;
-		});
-		new FlxTimer().start(2.7, function(_:FlxTimer)
-		{
-			dad.animation.play("hi");
-		});
-		new FlxTimer().start(3.4, function(_:FlxTimer)
-		{
-			dad.animation.play("idle");
-		});
-		new FlxTimer().start(4.0, function(_:FlxTimer)
-		{
-			boyfriend.animation.play("scared");
-			camFollow.x = boyfriend.getMidpoint().x - 100;
-			camFollow.y = boyfriend.getMidpoint().y - 100;
-		});
-		new FlxTimer().start(6.6, function(_:FlxTimer)
+		var cityAmb:FlxSound = FlxG.sound.play(Paths.sound("wilbur_cityambient"), 0.5);
+		
+		function clearDaShit()
 		{
 			dad.destroy();
 			dad = new Character(100, 100, SONG.player2);
 			add(dad);
 
-			FlxG.camera.zoom = defaultCamZoom;
-			
 			camFollow.x = dad.getMidpoint().x - 5;
 			camFollow.y = dad.getMidpoint().y - 5;
-			
-			FlxG.camera.focusOn(camFollow.getPosition());
-			
-			camHUD.visible = true;
-			
-			boyfriend.playAnim("idle");
-			
-			startDialogue();
-		});
-		/* END SEQUENCE */
 
-		FlxG.sound.play(Paths.sound("wilburCutsceneSound"));
+			FlxG.camera.focusOn(camFollow.getPosition());
+			FlxG.camera.zoom = defaultCamZoom;
+			camHUD.visible = true;
+
+			cityAmb.fadeOut(1.0, 0.0, function(_:FlxTween)
+			{
+				cityAmb.stop();
+			});
+
+			boyfriend.playAnim("idle");
+
+			startDialogue();
+		}
+		
+		// hud go poof
+		camHUD.visible = false;
+
+		dad.destroy();
+		if (secondCutscene)
+			dad = new Character(100, 100, "wilburcutscene2");
+		else
+			dad = new Character(100, 100, "wilburcutscene");
+		add(dad);
+
+		if (secondCutscene)
+		{			
+			var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(2048, 2048, FlxColor.BLACK);
+			black.scrollFactor.set();
+			black.alpha = 0.0;
+			add(black);
+			
+			camFollow.x = dad.getMidpoint().x + 100;
+			camFollow.y = dad.getMidpoint().y;
+
+			new FlxTimer().start(0.6, function(_:FlxTimer)
+			{
+				FlxG.sound.play(Paths.sound("wilbur_thud"));
+			});
+			
+			new FlxTimer().start(1.85, function(_:FlxTimer)
+			{
+				FlxTween.tween(black, {alpha: 1.0}, 0.5);
+			});
+			new FlxTimer().start(2.75, function(_:FlxTimer)
+			{
+				dad.visible = false;
+				
+				FlxTween.tween(black, {alpha: 0.0}, 1.0, {onComplete: function(_)
+				{
+					remove(black);
+					black.destroy();
+				}});
+
+				camFollow.x = boyfriend.getMidpoint().x - 100;
+				camFollow.y = boyfriend.getMidpoint().y - 100;
+				FlxG.camera.focusOn(camFollow.getPosition());
+
+				FlxG.camera.zoom = 1.8;
+				FlxTween.tween(FlxG.camera, {zoom: 1.4}, 2.0);
+			});
+			new FlxTimer().start(4.65, function(_:FlxTimer)
+			{
+				dad.visible = true;
+				dad.animation.play("tada");
+
+				camFollow.x = dad.getMidpoint().x + 100;
+				camFollow.y = dad.getMidpoint().y;
+				FlxG.camera.focusOn(camFollow.getPosition());
+
+				FlxG.camera.zoom = 0.9;
+				FlxTween.tween(FlxG.camera, {zoom: 1.0}, 0.5, {ease: FlxEase.elasticInOut});
+
+				FlxG.sound.play(Paths.sound("wilbur_guitarstrum"));				
+			});
+			new FlxTimer().start(6.0, function(_:FlxTimer)
+			{
+				camFollow.x = boyfriend.getMidpoint().x;
+				camFollow.y = boyfriend.getMidpoint().y;
+				FlxG.camera.focusOn(camFollow.getPosition());
+
+				FlxG.camera.zoom = 1.4;
+				FlxTween.tween(FlxG.camera, {zoom: 1.2}, 2.8, {onComplete: function(_)
+				{
+					clearDaShit();
+				}
+				});
+
+				FlxG.sound.play(Paths.sound("wilbur_bfbeep"));
+
+				boyfriend.animation.play("dodge");
+			});
+		}
+		else
+		{
+			/* SEQUENCE */
+			dad.visible = false;
+
+			FlxTween.tween(FlxG.camera, {zoom: 1.3}, 1.2, {ease: FlxEase.sineInOut});
+			
+			var cityMusic:FlxSound = FlxG.sound.play(Paths.sound("wilbur_citymuffledmusic"));
+
+			// center camera to bf
+			camFollow.x = boyfriend.getMidpoint().x - 100;
+			camFollow.y = boyfriend.getMidpoint().y - 100;
+
+			new FlxTimer().start(1.5, function(_:FlxTimer)
+			{
+				camFollow.x = dad.getMidpoint().x + 100;
+				camFollow.y = dad.getMidpoint().y - 160;
+				FlxTween.tween(FlxG.camera, {zoom: 1.8}, 0.75, {ease: FlxEase.elasticInOut});
+			});
+			new FlxTimer().start(1.7, function(_:FlxTimer)
+			{
+				FlxG.sound.play(Paths.sound("wilbur_footsteps"));
+			});
+			new FlxTimer().start(1.9, function(_:FlxTimer)
+			{
+				dad.x = -120;
+				FlxTween.tween(dad, {x: 100}, 0.7, {ease: FlxEase.circOut});
+				dad.visible = true;
+			});
+			new FlxTimer().start(2.7, function(_:FlxTimer)
+			{
+				dad.animation.play("hi");
+				FlxG.sound.play(Paths.sound("wilbur_hi"));
+			});
+			new FlxTimer().start(3.4, function(_:FlxTimer)
+			{
+				dad.animation.play("idle");
+			});
+			new FlxTimer().start(4.0, function(_:FlxTimer)
+			{
+				boyfriend.animation.play("scared");
+				camFollow.x = boyfriend.getMidpoint().x - 100;
+				camFollow.y = boyfriend.getMidpoint().y - 100;
+			});
+			new FlxTimer().start(6.6, function(_:FlxTimer)
+			{
+				clearDaShit();
+			});
+			/* END SEQUENCE */
+		}
 	}
 
 	// Start Wilbur dialogue
