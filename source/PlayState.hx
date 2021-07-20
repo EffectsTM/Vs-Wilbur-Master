@@ -312,10 +312,11 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 		
-		trace("safeFrames: " + Conductor.safeFrames
-			+ "safeZoneOffset: " + Conductor.safeZoneOffset
-			+ "timeScale: " + Conductor.timeScale
-			+ "botplay: " + FlxG.save.data.botplay);
+		trace("safeFrames: " + Conductor.safeFrames + "\n"
+			+ "safeZoneOffset: " + Conductor.safeZoneOffset + "\n"
+			+ "timeScale: " + Conductor.timeScale + "\n"
+			+ "botplay: " + FlxG.save.data.botplay + "\n"
+			+ "noteSpeed: " + SONG.speed);
 	
 		//dialogue shit
 		switch (SONG.song.toLowerCase())
@@ -1869,9 +1870,9 @@ class PlayState extends MusicBeatState
 							if (FlxG.save.data.downscroll)
 							{
 								if (daNote.mustPress)
-									daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y + 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(FlxG.save.data.scrollSpeed == 1 ? SONG.speed : FlxG.save.data.scrollSpeed, 2));
+									daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y + 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(SONG.speed, 2));
 								else
-									daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y + 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(FlxG.save.data.scrollSpeed == 1 ? SONG.speed : FlxG.save.data.scrollSpeed, 2));
+									daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y + 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(SONG.speed, 2));
 								if(daNote.isSustainNote)
 								{
 									// Remember = minus makes notes go up, plus makes them go down
@@ -1903,9 +1904,9 @@ class PlayState extends MusicBeatState
 							}else
 							{
 								if (daNote.mustPress)
-									daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y - 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(FlxG.save.data.scrollSpeed == 1 ? SONG.speed : FlxG.save.data.scrollSpeed, 2));
+									daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y - 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(SONG.speed, 2));
 								else
-									daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y - 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(FlxG.save.data.scrollSpeed == 1 ? SONG.speed : FlxG.save.data.scrollSpeed, 2));
+									daNote.y = (strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].y - 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(SONG.speed, 2));
 								if(daNote.isSustainNote)
 								{
 									daNote.y -= daNote.height / 2;
@@ -2678,10 +2679,10 @@ class PlayState extends MusicBeatState
 		if (!boyfriend.stunned)
 		{
 			health -= 0.04;
-			if (combo > 5 && gf.animOffsets.exists('sad'))
+			/* if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');
-			}
+			} */
 			combo = 0;
 			misses++;
 
@@ -3025,10 +3026,10 @@ class PlayState extends MusicBeatState
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
 
-		if (curBeat % gfSpeed == 0)
-		{
+		if (curBeat % 2 == 0)
+			gf.dance(true);
+		else
 			gf.dance();
-		}
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing"))
 		{
