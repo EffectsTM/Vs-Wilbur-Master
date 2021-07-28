@@ -2,7 +2,8 @@
 
 ![License](https://img.shields.io/github/license/EffectsTM/Vs-Wilbur-Master?style=flat-square) ![Version](https://img.shields.io/github/v/release/EffectsTM/Vs-Wilbur-Master?style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/EffectsTM/Vs-Wilbur-Master?style=flat-square)
 
-description pending
+This is the source code repository for Friday Night Funkin' : Wilbur Full Week.
+Gamebanana Link:
 
 # License
 
