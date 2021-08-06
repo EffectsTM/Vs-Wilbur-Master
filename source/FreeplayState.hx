@@ -50,13 +50,13 @@ class FreeplayState extends MusicBeatState
 			var data:Array<String> = initSonglist[i].split(':');
 			if (StoryMenuState.weekUnlocked != null)
 				if (StoryMenuState.weekUnlocked[Std.parseInt(data[2]) - 1])
-					songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+					songs.push(new SongMetadata(data[0].toLowerCase(), Std.parseInt(data[2]), data[1]));
 		}
 
 		// secret song idk
 		if (StoryMenuState.weekUnlocked != null)
 			if (StoryMenuState.weekUnlocked[1])
-				songs.push(new SongMetadata("Unfinished-Symphony", 2, "wilburmc"));
+				songs.push(new SongMetadata("unfinished-symphony", 2, "wilburmc"));
 
 		 #if cpp
 		 // Updating Discord Rich Presence
@@ -230,9 +230,7 @@ class FreeplayState extends MusicBeatState
 		if (curDifficulty > 2)
 			curDifficulty = 0;
 
-		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		#end
 
 		switch (curDifficulty)
 		{
