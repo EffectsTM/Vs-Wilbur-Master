@@ -3,30 +3,30 @@ package;
 /// Code created by Rozebud for FPS Plus (thanks rozebud)
 // modified by KadeDev for use in Kade Engine/Tricky
 
-import flixel.util.FlxAxes;
-import flixel.FlxSubState;
 import Options.Option;
-import flixel.input.FlxInput;
-import flixel.input.keyboard.FlxKey;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.FlxSubState;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.input.FlxInput;
+import flixel.input.FlxKeyManager;
+import flixel.input.keyboard.FlxKey;
+import flixel.math.FlxMath;
+import flixel.text.FlxText;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
 import io.newgrounds.NG;
 import lime.app.Application;
 import lime.utils.Assets;
-import flixel.math.FlxMath;
-import flixel.text.FlxText;
-import flixel.input.FlxKeyManager;
-
 
 using StringTools;
+
 
 class KeyBindMenu extends FlxSubState
 {
@@ -249,11 +249,11 @@ class KeyBindMenu extends FlxSubState
 
         if(shouldReturn){
             keys[curSelected] = r;
-            FlxG.sound.play(Paths.sound('Hover','clown'));
+			FlxG.sound.play(Paths.sound('scrollMenu'));
         }
         else{
             keys[curSelected] = tempKey;
-            FlxG.sound.play(Paths.sound('confirm','clown'));
+			FlxG.sound.play(Paths.sound('scrollMenu'));
             keyWarning.alpha = 1;
             warningTween.cancel();
             warningTween = FlxTween.tween(keyWarning, {alpha: 0}, 0.5, {ease: FlxEase.circOut, startDelay: 2});
