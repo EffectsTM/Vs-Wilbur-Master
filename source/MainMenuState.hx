@@ -155,7 +155,7 @@ class MainMenuState extends MusicBeatState
 					#if linux
 					Sys.command('/usr/bin/xdg-open', ["https://discord.gg/mcVKYfYhKQ", "&"]);
 					#else
-					FlxG.openURL('https://discord.gg/mcVKYfYhKQn');
+					FlxG.openURL('https://discord.gg/mcVKYfYhKQ');
 					#end
 				}
 				else
